@@ -20,7 +20,7 @@ Overview
 - ssign values to variables.
 - Declare & Initialize
 ```
-int var = 10;
+    int var = 10;
     int $vsr = 30;
     int var2;
     var2 = 20;
@@ -37,3 +37,26 @@ int var = 10;
      System.out.println(Greeting);
      System.out.println(PI);
 ```
+
+# Encoding Set 
+- ASCII (American Standard Code for Information Interchange)
+- Represented in 8 bits and represents all English alphabets, punctuations, etc.
+- ISO-8859-1 (International Standards Organization)
+- 8 Bits and contains all characters required for all western languages.
+
+# Unicode 
+- Developed by Unicode Consortium.
+- Accommodates all characters of all languages in the world.
+- Uses 16 bits.
+- Encoding Set (Continued...)
+    # UTF-8
+  - Every character is encoded in 1 byte.
+  - Suitable for texts having Latin letters.
+    
+    # UTF-16
+    - Commonly used characters are encoded in 2 bytes.
+    - Less common characters are encoded as pairs of 16-bit code units.
+    - 
+    # UTF-32
+    - Uses 32 bits for every single character.
+    - Not a choice for Internet applications.
