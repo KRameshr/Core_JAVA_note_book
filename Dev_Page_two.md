@@ -65,11 +65,101 @@ Overview
 ```
 Symbol   Uses
 .	Refer methods/fields of objects 
-,	To separate arguments in method signatures. 
+,	To separate arguments in method signatures.
+```
+ public class First {
+    void myMethod(int age , String name) {
+            System.out.println("Name: " + name + ", Age: " + age);
+            // method signature: myMethod(int, String)
+         }
+       public static void main(String[] args) {
+            First obj = new First();
+            obj.myMethod(25, "Alice");
+
+       }
+}
+``` 
 ;	In For loops; Terminate Statements 
 {}	Declare Arrays; Blocks 
 ()	To evaluate Conditions; Method signatures to contain lists of arguments; Narrowing conversions. 
 []	Declare Arrays; Refer array values 
 < >	Pass parameters to parameterized types 
 :	In For loops
+public class First {
+  public static void main(String[] args) {
+    int [] number = new int[10];
+        List<String> list = new ArrayList<String>();
+        for(int i=0; i<10; i++) {
+            number[i] = i * 2;
+            list.add("Item " + i);
+    
+        }
+        for(int num : number) {
+            System.out.println(num);
+        }
+  }
+}
 ```
+# Primitives 
+
+byte 
+
+short 
+
+int 
+
+long 
+
+
+float 
+
+
+double 
+
+
+char 
+
+
+boolean
+
+
+
+# Primitive Conversions 
+
+- Widening conversions 
+
+  byte to short, int, long, float
+  int to long, float, double
+  float to double 
+
+  ```
+  public class First {
+        public static void wideningExample() {
+            float Flatvar  = 123.67F;
+            double bigNum = (double)Flatvar; 
+            System.out.println(Flatvar + " After Widening Example: " + bigNum);
+         }
+       public static void main(String[] args) {
+       wideningExample();
+      }
+  }
+  ```
+
+- Narrowing Conversions
+
+  short to byte
+  int to short, byte
+  double to float
+
+  ```
+  public class First {
+       public static void NarrowingExample() {
+            float longVar  = 123000000000000L;
+            double intNum = (int)longVar; 
+            System.out.println(longVar + " After NarrowingExample : " + intNum);
+         }
+       public static void main(String[] args) {
+       NarrowingExample()
+      }
+  }
+  ```
