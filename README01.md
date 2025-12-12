@@ -120,53 +120,43 @@ Java SE 8	March 18, 2014
 Each version introduced new enhancements, libraries, and performance upgrades—especially Java 8, which revolutionized Java with streams, lambdas, and functional programming.
 
 
-📝 Overview
+# Overview
 
 Environment Setup
-
 First Java Program
 
 <br/>
-🛠️ Environment Setup
+# Environment Setup
 Download JDK
 
 Download the Java Platform (JDK) from:
 https://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 Install the JDK on your machine.
-<br/>
+
 
 Download NetBeans IDE
-
 Download NetBeans IDE from:
 https://www.oracle.com/technetwork/java/javase/downloads/index.html
-
 Install NetBeans IDE and set the installed JDK location as the default JDK for the IDE.
-<br/>
 
-✔ Other Available IDEs
 
-Eclipse (free and open source)
+- ✔ Other Available IDEs
 
-Sun's Java Studio Enterprise (free)
+- Eclipse (free and open source)
+- Sun's Java Studio Enterprise (free)
+- Sun's Java Studio Creator (free)
+- Oracle JDeveloper (free)
+- Borland JBuilder
+- IBM WebSphere Studio Application Developer
+- BEA WebLogic Workshop
+- IntelliJ IDEA
 
-Sun's Java Studio Creator (free)
 
-Oracle JDeveloper (free)
-
-Borland JBuilder
-
-IBM WebSphere Studio Application Developer
-
-BEA WebLogic Workshop
-
-IntelliJ IDEA
-
-<br/>
-🚀 First Java Program
+# First Java Program
 
 Below is your first sample Java program:
-
+```
 package myPackage;
 /**
 * @author testuser
@@ -176,19 +166,18 @@ public class FirstApp {
         System.out.println("Hello Beans!!");
     }
 }
+```
 
-<br/>
-📌 Contents of the Java Program
+# Contents of the Java Program
 🔹 Package
-Code:
+
+
+```
 package myPackage;
 
 Explanation:
-
 Specifies the package for the program.
-
 FirstApp.java gets compiled and FirstApp.class is stored inside the myPackage folder.
-
 🔹 Comments
 Code:
 /**
@@ -196,11 +185,10 @@ Code:
 */
 
 Explanation:
-
 Single-line comments: // comment
-
 Multi-line comments: /* comment */
 
+```
 🔹 Reserved Words
 Explanation:
 
