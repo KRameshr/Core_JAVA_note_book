@@ -6,7 +6,7 @@ massive enterprise systems.
 
 This article provides a crisp introduction to the language—its origins, purpose, components, features, and evolution.
 
-📌 Overview & Agenda
+#  Overview & Agenda
 - About Java
 - What is Java?
 - Why Java was created
@@ -15,24 +15,20 @@ This article provides a crisp introduction to the language—its origins, purpos
 - Key features of Java
 - Evolution of Java versions
 
-🔥 1. About Java
+# 1. About Java
 
-Java has remained one of the most popular programming languages since 1996.
+Java has remained one of the most popular programming languages since 1996. <br/>
 With more than 10 million developers worldwide, Java is used in:
 
-Mobile applications
-
-Desktop applications
-
-Embedded systems
-
-Cloud-based enterprise applications
-
-Big data & distributed systems
+- Mobile applications  
+- Desktop applications  
+- Embedded systems  
+- Cloud-based enterprise applications  
+- Big data & distributed systems  
 
 Its versatility and reliability make it suitable for projects of all scales—from tiny devices to massive corporate solutions.
 
-🧠 2. What is Java?
+# 2. What is Java?
 
 Java was originally developed by Sun Microsystems in 1996 as a high-level, object-oriented programming language.
 
