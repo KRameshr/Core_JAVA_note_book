@@ -30,16 +30,15 @@ Its versatility and reliability make it suitable for projects of all scales—fr
 
 # 2. What is Java?
 
-Java was originally developed by Sun Microsystems in 1996 as a high-level, object-oriented programming language.
-
-Today, Java is more than just a language—it is also:
+Java was originally developed by Sun Microsystems in 1996 as a high-level, object-oriented programming language. <br/>
+Today, Java is more than just a language — it is also:
 ✔ A platform
 ✔ A development environment
 ✔ A runtime environment
 
 This combination is what makes Java a comprehensive ecosystem for building modern applications.
 
-🎯 3. Why Was Java Created?
+# 3. Why Was Java Created?
 
 During the mid-90s, the industry needed a language that could run on multiple devices without requiring major changes.
 
