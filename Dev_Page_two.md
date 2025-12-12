@@ -66,7 +66,14 @@ Overview
 Symbol   Uses
 .	Refer methods/fields of objects 
 ,	To separate arguments in method signatures.
-```
+;	In For loops; Terminate Statements 
+{}	Declare Arrays; Blocks 
+()	To evaluate Conditions; Method signatures to contain lists of arguments; Narrowing conversions. 
+[]	Declare Arrays; Refer array values 
+< >	Pass parameters to parameterized types 
+:	In For loops
+
+
  public class First {
     void myMethod(int age , String name) {
             System.out.println("Name: " + name + ", Age: " + age);
@@ -78,13 +85,7 @@ Symbol   Uses
 
        }
 }
-``` 
-;	In For loops; Terminate Statements 
-{}	Declare Arrays; Blocks 
-()	To evaluate Conditions; Method signatures to contain lists of arguments; Narrowing conversions. 
-[]	Declare Arrays; Refer array values 
-< >	Pass parameters to parameterized types 
-:	In For loops
+
 public class First {
   public static void main(String[] args) {
     int [] number = new int[10];
