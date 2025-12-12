@@ -60,3 +60,10 @@ Overview
     # UTF-32
     - Uses 32 bits for every single character.
     - Not a choice for Internet applications.
+    
+# Separators 
+```
+Symbol Uses
+.     Refer methods
+/     fields of objects 
+,To separate arguments in method signatures. 39;In For loops; Terminate Statements 40{}Declare Arrays; Blocks 41()To evaluate Conditions; Method signatures to contain lists of arguments; Narrowing conversions. 42[]Declare Arrays; Refer array values 43< >Pass parameters to parameterized types 44:In For loops 45 ```
