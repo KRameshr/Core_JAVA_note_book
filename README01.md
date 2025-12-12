@@ -215,14 +215,14 @@ Example:
 public class FirstApp {
 
 🔹 Methods
+
 Explanation:
-
 Methods perform specific operations and may take inputs and return outputs.
-
 Example:
 System.out.println("Hello Beans!!");
 
 🔹 Main Method
+
 Explanation:
 Entry point of any Java program
 Accepts a String[] as input
