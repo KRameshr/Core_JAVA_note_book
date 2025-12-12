@@ -120,28 +120,26 @@ Java SE 8	March 18, 2014
 Each version introduced new enhancements, libraries, and performance upgrades—especially Java 8, which revolutionized Java with streams, lambdas, and functional programming.
 
 
-# Overview
-
-Environment Setup
-First Java Program
+ # Environment Setup
+ # First Java Program
 
 <br/>
 # Environment Setup
 Download JDK
 
-Download the Java Platform (JDK) from:
-https://www.oracle.com/technetwork/java/javase/downloads/index.html
+Download the Java Platform (JDK) from: <br/>
+https://www.oracle.com/technetwork/java/javase/downloads/index.html  <br/>
 
-Install the JDK on your machine.
-
-
-Download NetBeans IDE
-Download NetBeans IDE from:
-https://www.oracle.com/technetwork/java/javase/downloads/index.html
-Install NetBeans IDE and set the installed JDK location as the default JDK for the IDE.
+Install the JDK on your machine.  <br/>
 
 
-- ✔ Other Available IDEs
+- Download NetBeans IDE
+- Download NetBeans IDE from:
+- https://www.oracle.com/technetwork/java/javase/downloads/index.html
+- Install NetBeans IDE and set the installed JDK location as the default JDK for the IDE.
+
+
+# ✔ Other Available IDEs 
 
 - Eclipse (free and open source)
 - Sun's Java Studio Enterprise (free)
@@ -178,7 +176,7 @@ package myPackage;
 Explanation:
 Specifies the package for the program.
 FirstApp.java gets compiled and FirstApp.class is stored inside the myPackage folder.
-🔹 Comments
+// Comments
 Code:
 /**
 * @author testuser
@@ -189,41 +187,35 @@ Single-line comments: // comment
 Multi-line comments: /* comment */
 
 ```
-🔹 Reserved Words
+# Reserved Words
 Explanation:
-
 Reserved words (keywords) have predefined meanings and cannot be used as identifiers.
 
 Examples:
 class, public, static, etc.
 
-🔹 Statements
+# Statements
 Explanation:
-
 A statement represents an action or set of actions.
 
 Example:
 System.out.println("Hello Beans!!");
-
-
 Every Java statement ends with a semicolon (;).
 
-🔹 Blocks
+# Blocks
 Explanation:
-
 A block is defined using { } and groups multiple statements.
-
+```
 Example:
 public static void main(String[] args) {
     System.out.println("Hello Beans!!");
 }
-
-🔹 Class
+```
+#  Class
 Explanation:
-
 A class represents the blueprint for creating objects.
-
 Example:
+```
 public class FirstApp {
 
 🔹 Methods
@@ -236,13 +228,10 @@ System.out.println("Hello Beans!!");
 
 🔹 Main Method
 Explanation:
-
 Entry point of any Java program
-
 Accepts a String[] as input
-
 Example:
 public static void main(String[] args) {
     System.out.println("Hello Beans!!");
 }
-
+```
