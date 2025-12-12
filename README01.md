@@ -5,20 +5,13 @@ Java continues to be one of the most influential programming languages in the wo
 This article provides a crisp introduction to the language—its origins, purpose, components, features, and evolution.
 
 📌 Overview & Agenda
-
-About Java
-
-What is Java?
-
-Why Java was created
-
-JVM, JRE, JDK explained
-
-How Java achieves platform independence
-
-Key features of Java
-
-Evolution of Java versions
+- About Java
+- What is Java?
+- Why Java was created
+- JVM, JRE, JDK explained
+- How Java achieves platform independence
+- Key features of Java
+- Evolution of Java versions
 
 🔥 1. About Java
 
