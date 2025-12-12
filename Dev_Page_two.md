@@ -164,3 +164,18 @@ boolean
       }
   }
   ```
+# Operators 
+
+
+- Unary Operators
+- Arithmetic Operators
+- Relational & Conditional Operators 
+
+
+Assignment Operators 
+
+
+Logical & Shift Operators 
+
+
+Other Operators
