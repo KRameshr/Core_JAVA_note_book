@@ -209,16 +209,18 @@ public static void main(String[] args) {
 ```
 #  Class
 Explanation:
-A class represents the blueprint for creating objects.
+A class represents the blueprint for creating objects.<br/>
 Example:
+```
 public class FirstApp {
-
+```
  # Methods
 Explanation:
-Methods perform specific operations and may take inputs and return outputs.
+Methods perform specific operations and may take inputs and return outputs. <br/>
 Example:
+```
 System.out.println("Hello Beans!!");
-
+```
 # Main Method
 Explanation:
 Entry point of any Java program
