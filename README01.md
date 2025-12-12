@@ -120,10 +120,6 @@ Java SE 8	March 18, 2014
 Each version introduced new enhancements, libraries, and performance upgrades—especially Java 8, which revolutionized Java with streams, lambdas, and functional programming.
 
 
- # Environment Setup
- # First Java Program
-
-<br/>
 # Environment Setup
 Download JDK
 
