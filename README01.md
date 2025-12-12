@@ -211,22 +211,20 @@ public static void main(String[] args) {
 Explanation:
 A class represents the blueprint for creating objects.
 Example:
-```
 public class FirstApp {
 
-🔹 Methods
-
+ # Methods
 Explanation:
 Methods perform specific operations and may take inputs and return outputs.
 Example:
 System.out.println("Hello Beans!!");
 
-🔹 Main Method
-
+# Main Method
 Explanation:
 Entry point of any Java program
 Accepts a String[] as input
 Example:
+```
 public static void main(String[] args) {
     System.out.println("Hello Beans!!");
 }
