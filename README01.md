@@ -32,9 +32,10 @@ Its versatility and reliability make it suitable for projects of all scales—fr
 
 Java was originally developed by Sun Microsystems in 1996 as a high-level, object-oriented programming language. <br/>
 Today, Java is more than just a language — it is also:
-✔ A platform
-✔ A development environment
-✔ A runtime environment
+- ✔ A platform
+- ✔ A development environment
+- ✔ A runtime environment
+
 
 This combination is what makes Java a comprehensive ecosystem for building modern applications.
 
