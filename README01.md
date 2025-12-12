@@ -106,6 +106,7 @@ Java’s design ensures reliability, maintainability, and high performance acros
 
 # Evolution of Java Versions
 Version	Release Date
+```
 JDK 1.0	January 23, 1996
 JDK 1.1	February 19, 1997
 J2SE 1.2	December 8, 1998
@@ -115,6 +116,6 @@ J2SE 5.0	September 30, 2004
 Java SE 6	December 11, 2006
 Java SE 7	July 7, 2011
 Java SE 8	March 18, 2014
-
+```
 Each version introduced new enhancements, libraries, and performance upgrades—especially Java 8, which revolutionized Java with streams, lambdas, and functional programming.
 
