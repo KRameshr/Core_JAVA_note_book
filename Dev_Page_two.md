@@ -63,7 +63,13 @@ Overview
     
 # Separators 
 ```
-Symbol Uses
-.     Refer methods
-/     fields of objects 
-,To separate arguments in method signatures. 39;In For loops; Terminate Statements 40{}Declare Arrays; Blocks 41()To evaluate Conditions; Method signatures to contain lists of arguments; Narrowing conversions. 42[]Declare Arrays; Refer array values 43< >Pass parameters to parameterized types 44:In For loops 45 ```
+Symbol   Uses
+.	Refer methods/fields of objects 
+,	To separate arguments in method signatures. 
+;	In For loops; Terminate Statements 
+{}	Declare Arrays; Blocks 
+()	To evaluate Conditions; Method signatures to contain lists of arguments; Narrowing conversions. 
+[]	Declare Arrays; Refer array values 
+< >	Pass parameters to parameterized types 
+:	In For loops
+```
