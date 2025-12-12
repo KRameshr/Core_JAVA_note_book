@@ -1,8 +1,8 @@
 ## Core Java – Introduction
 
-Java continues to be one of the most influential programming languages in the world. Known for its robustness,  
-
-platform independence, and vast ecosystem, Java powers everything from mobile apps to massive enterprise systems.
+Java continues to be one of the most influential programming languages in the world. Known for its
+robustness, platform independence, and vast ecosystem, Java powers everything from mobile apps to 
+massive enterprise systems.
 
 This article provides a crisp introduction to the language—its origins, purpose, components, features, and evolution.
 
