@@ -197,13 +197,12 @@ boolean isJavaFun = true;
       }
   }
   ```
-# 🔹 Java Operators
+# Operators
 
 ---
 
-## 1️⃣ Unary Operators
-
-**Definition**  
+## 1️ Unary Operators
+  
 Unary operators operate on a **single operand**.
 
 **Types**
@@ -218,8 +217,6 @@ Unary operators operate on a **single operand**.
 operator operand
 Example
 
-java
-Copy code
 int count = 5;
 count++;    // increment
 --count;   // decrement
@@ -229,7 +226,6 @@ count++;    // increment
 
 Definition
 Used to perform basic mathematical operations.
-
 
 Operators
 + → Addition
@@ -243,11 +239,9 @@ Operators
 % → Modulus (remainder)
 
 Syntax
-
-    java
-    Copy code
     result = operand1 operator operand2;
-    Example
+    
+Example
 
     java
     Copy code
@@ -279,20 +273,14 @@ Conditional (Ternary) Operator
 ?:
 
 Syntax
-    
-    java
-    Copy code
     condition ? value1 : value2;
-    Example
-
-java
-    Copy code
+Example
     int age = 20;
     boolean canVote = age >= 18;
 
 String result = (age >= 18) ? "Eligible" : "Not Eligible";
 
-4️⃣ Assignment Operators
+4️. Assignment Operators
 
 Definition
 Used to assign values to variables.
@@ -312,18 +300,13 @@ Operators
     %= → Modulus and assign
 
 Syntax
-
-    java
-    Copy code
     variable operator value;
-    Example
-
-java
-    Copy code
+    
+Example
     int salary = 10000;
     salary += 2000;   // salary = salary + 2000
     
-5️⃣ Logical & Shift Operators
+5️. Logical & Shift Operators
 
 Logical Operators
     && → Logical AND
@@ -340,15 +323,10 @@ Logical Operators
     >>> → Unsigned right shift
 
 Syntax
-
-    java
-    Copy code
     condition1 && condition2
     value << numberOfBits
+    
 Example
-
-java
-    Copy code
     boolean isLoggedIn = true;
     boolean isAdmin = false;
     
@@ -359,8 +337,7 @@ java
     int x = 8;
     int result = x << 1;   // 16
     
-6️⃣ Other Important Operators
-Operators
+6️. Other Important Operators
 
     instanceof → Checks object type
     
@@ -373,14 +350,8 @@ Operators
     () → Method call
 
 Syntax
-
-    java
-    Copy code
     object instanceof ClassName
-    Example
-
-java
-    Copy code
+Example
     String name = "Java";
     System.out.println(name.length());
 
