@@ -213,38 +213,32 @@ Unary operators operate on a **single operand**.
 - `!` → Logical NOT  
 
 **Syntax**
-```java
-operator operand
+```
+  operator operand
 Example
-
-int count = 5;
-count++;    // increment
---count;   // decrement
+    
+    int count = 5;
+    count++;    // increment
+    --count;   // decrement
 
 ```
-2️⃣ Arithmetic Operators
+2️. Arithmetic Operators
 
 Definition
 Used to perform basic mathematical operations.
 
 Operators
-+ → Addition
-
-- → Subtraction
-
-* → Multiplication
-
-/ → Division
-
-% → Modulus (remainder)
+    - + → Addition
+    - - → Subtraction
+    - * → Multiplication
+    - / → Division
+    - % → Modulus (remainder)
 
 Syntax
     result = operand1 operator operand2;
     
 Example
 
-    java
-    Copy code
     int a = 10, b = 3;
     int sum = a + b;
     int remainder = a % b;
@@ -256,21 +250,19 @@ Used to compare values and return a boolean result.
 
 Relational Operators
 
-== → Equal to
+- == → Equal to
 
-!= → Not equal to
+- != → Not equal to
 
-> → Greater than
+- > → Greater than
 
-< → Less than
+- < → Less than
 
->= → Greater than or equal to
+- >= → Greater than or equal to
 
-<= → Less than or equal to
+- <= → Less than or equal to
 
-Conditional (Ternary) Operator
-
-?:
+- Conditional (Ternary) Operator  ```?:```
 
 Syntax
     condition ? value1 : value2;
@@ -287,17 +279,17 @@ Used to assign values to variables.
 
 Operators
     
-    = → Assign
+    - = → Assign
     
-    += → Add and assign
+    - += → Add and assign
     
-    -= → Subtract and assign
+    - -= → Subtract and assign
     
-    *= → Multiply and assign
+    - *= → Multiply and assign
     
-    /= → Divide and assign
+    - /= → Divide and assign
     
-    %= → Modulus and assign
+    - %= → Modulus and assign
 
 Syntax
     variable operator value;
@@ -309,18 +301,18 @@ Example
 5️. Logical & Shift Operators
 
 Logical Operators
-    && → Logical AND
+    - && → Logical AND
     
-    || → Logical OR
+    - || → Logical OR
     
-    ! → Logical NOT
+    - ! → Logical NOT
     
-    Shift Operators
-    << → Left shift
+Shift Operators
+    - << → Left shift
     
-    >> → Right shift
+    - >> → Right shift
     
-    >>> → Unsigned right shift
+    - >>> → Unsigned right shift
 
 Syntax
     condition1 && condition2
@@ -339,15 +331,15 @@ Example
     
 6️. Other Important Operators
 
-    instanceof → Checks object type
+    - instanceof → Checks object type
     
     new → Creates an object
     
-    . → Access members
+    - . → Access members
     
-    [] → Array access
+    - [] → Array access
     
-    () → Method call
+    - () → Method call
 
 Syntax
     object instanceof ClassName
