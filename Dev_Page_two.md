@@ -104,26 +104,13 @@ public class First {
 # Primitives 
 
 byte 
-
 short 
-
 int 
-
 long 
-
-
 float 
-
-
 double 
-
-
 char 
-
-
 boolean
-
-
 
 # Primitive Conversions 
 
