@@ -101,12 +101,13 @@ Example
       }
     }
 ```
-# 🧱 Primitives in Java
+# Primitives in Java
 
 In Java, primitive data types are the basic building blocks used to store simple values.  
 Java has **8 primitive types**, grouped by the kind of data they hold.
 
 ────────────────────────────────────
+
 1️⃣ Integer Types
 ────────────────────────────────────
 Type    | Size    | Range                          | Default
