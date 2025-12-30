@@ -223,12 +223,15 @@ Copy code
 int count = 5;
 count++;    // increment
 --count;   // decrement
+
+```
 2️⃣ Arithmetic Operators
+
 Definition
 Used to perform basic mathematical operations.
 
-Operators
 
+Operators
 + → Addition
 
 - → Subtraction
@@ -241,17 +244,19 @@ Operators
 
 Syntax
 
-java
-Copy code
-result = operand1 operator operand2;
-Example
+    java
+    Copy code
+    result = operand1 operator operand2;
+    Example
 
-java
-Copy code
-int a = 10, b = 3;
-int sum = a + b;
-int remainder = a % b;
-3️⃣ Relational & Conditional Operators
+    java
+    Copy code
+    int a = 10, b = 3;
+    int sum = a + b;
+    int remainder = a % b;
+    
+3️. Relational & Conditional Operators
+
 Definition
 Used to compare values and return a boolean result.
 
@@ -274,103 +279,108 @@ Conditional (Ternary) Operator
 ?:
 
 Syntax
+    
+    java
+    Copy code
+    condition ? value1 : value2;
+    Example
 
 java
-Copy code
-condition ? value1 : value2;
-Example
-
-java
-Copy code
-int age = 20;
-boolean canVote = age >= 18;
+    Copy code
+    int age = 20;
+    boolean canVote = age >= 18;
 
 String result = (age >= 18) ? "Eligible" : "Not Eligible";
+
 4️⃣ Assignment Operators
+
 Definition
 Used to assign values to variables.
 
 Operators
-
-= → Assign
-
-+= → Add and assign
-
--= → Subtract and assign
-
-*= → Multiply and assign
-
-/= → Divide and assign
-
-%= → Modulus and assign
+    
+    = → Assign
+    
+    += → Add and assign
+    
+    -= → Subtract and assign
+    
+    *= → Multiply and assign
+    
+    /= → Divide and assign
+    
+    %= → Modulus and assign
 
 Syntax
 
-java
-Copy code
-variable operator value;
-Example
+    java
+    Copy code
+    variable operator value;
+    Example
 
 java
-Copy code
-int salary = 10000;
-salary += 2000;   // salary = salary + 2000
+    Copy code
+    int salary = 10000;
+    salary += 2000;   // salary = salary + 2000
+    
 5️⃣ Logical & Shift Operators
+
 Logical Operators
-&& → Logical AND
-
-|| → Logical OR
-
-! → Logical NOT
-
-Shift Operators
-<< → Left shift
-
->> → Right shift
-
->>> → Unsigned right shift
+    && → Logical AND
+    
+    || → Logical OR
+    
+    ! → Logical NOT
+    
+    Shift Operators
+    << → Left shift
+    
+    >> → Right shift
+    
+    >>> → Unsigned right shift
 
 Syntax
 
-java
-Copy code
-condition1 && condition2
-value << numberOfBits
+    java
+    Copy code
+    condition1 && condition2
+    value << numberOfBits
 Example
 
 java
-Copy code
-boolean isLoggedIn = true;
-boolean isAdmin = false;
-
-if (isLoggedIn && !isAdmin) {
-    System.out.println("User Access");
-}
-
-int x = 8;
-int result = x << 1;   // 16
+    Copy code
+    boolean isLoggedIn = true;
+    boolean isAdmin = false;
+    
+    if (isLoggedIn && !isAdmin) {
+        System.out.println("User Access");
+    }
+    
+    int x = 8;
+    int result = x << 1;   // 16
+    
 6️⃣ Other Important Operators
 Operators
 
-instanceof → Checks object type
-
-new → Creates an object
-
-. → Access members
-
-[] → Array access
-
-() → Method call
+    instanceof → Checks object type
+    
+    new → Creates an object
+    
+    . → Access members
+    
+    [] → Array access
+    
+    () → Method call
 
 Syntax
 
-java
-Copy code
-object instanceof ClassName
-Example
+    java
+    Copy code
+    object instanceof ClassName
+    Example
 
 java
-Copy code
-String name = "Java";
-System.out.println(name.length());
+    Copy code
+    String name = "Java";
+    System.out.println(name.length());
 
