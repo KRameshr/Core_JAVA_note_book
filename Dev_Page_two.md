@@ -197,38 +197,37 @@ boolean isJavaFun = true;
       }
   }
   ```
-# Operators
-1️. Unary Operators
-📌 Definition
+# 🔹 Java Operators
 
-Unary operators operate on a single operand.
+---
 
-🧩 Types
+## 1️⃣ Unary Operators
 
-+ → Unary plus
+**Definition**  
+Unary operators operate on a **single operand**.
 
-- → Unary minus
+**Types**
+- `+` → Unary plus  
+- `-` → Unary minus  
+- `++` → Increment  
+- `--` → Decrement  
+- `!` → Logical NOT  
 
-++ → Increment
-
--- → Decrement
-
-! → Logical NOT
-
-🧪 Syntax
+**Syntax**
+```java
 operator operand
+Example
 
-💡 Example
+java
+Copy code
 int count = 5;
 count++;    // increment
 --count;   // decrement
-
 2️⃣ Arithmetic Operators
-📌 Definition
-
+Definition
 Used to perform basic mathematical operations.
 
-🧩 Operators
+Operators
 
 + → Addition
 
@@ -240,20 +239,23 @@ Used to perform basic mathematical operations.
 
 % → Modulus (remainder)
 
-🧪 Syntax
-result = operand1 operator operand2;
+Syntax
 
-💡 Example
+java
+Copy code
+result = operand1 operator operand2;
+Example
+
+java
+Copy code
 int a = 10, b = 3;
 int sum = a + b;
 int remainder = a % b;
-
 3️⃣ Relational & Conditional Operators
-📌 Definition
-
+Definition
 Used to compare values and return a boolean result.
 
-🧩 Relational Operators
+Relational Operators
 
 == → Equal to
 
@@ -267,25 +269,28 @@ Used to compare values and return a boolean result.
 
 <= → Less than or equal to
 
-🧩 Conditional (Ternary) Operator
+Conditional (Ternary) Operator
 
 ?:
 
-🧪 Syntax
-condition ? value1 : value2;
+Syntax
 
-💡 Example
+java
+Copy code
+condition ? value1 : value2;
+Example
+
+java
+Copy code
 int age = 20;
 boolean canVote = age >= 18;
 
 String result = (age >= 18) ? "Eligible" : "Not Eligible";
-
 4️⃣ Assignment Operators
-📌 Definition
-
+Definition
 Used to assign values to variables.
 
-🧩 Operators
+Operators
 
 = → Assign
 
@@ -299,35 +304,42 @@ Used to assign values to variables.
 
 %= → Modulus and assign
 
-🧪 Syntax
-variable operator value;
+Syntax
 
-💡 Example
+java
+Copy code
+variable operator value;
+Example
+
+java
+Copy code
 int salary = 10000;
 salary += 2000;   // salary = salary + 2000
-
 5️⃣ Logical & Shift Operators
-🔹 Logical Operators (Boolean)
-
+Logical Operators
 && → Logical AND
 
 || → Logical OR
 
 ! → Logical NOT
 
-🔹 Shift Operators
-
+Shift Operators
 << → Left shift
 
 >> → Right shift
 
 >>> → Unsigned right shift
 
-🧪 Syntax
+Syntax
+
+java
+Copy code
 condition1 && condition2
 value << numberOfBits
+Example
 
-💡 Example
+java
+Copy code
 boolean isLoggedIn = true;
 boolean isAdmin = false;
 
@@ -337,9 +349,8 @@ if (isLoggedIn && !isAdmin) {
 
 int x = 8;
 int result = x << 1;   // 16
-
 6️⃣ Other Important Operators
-📌 Includes
+Operators
 
 instanceof → Checks object type
 
@@ -351,11 +362,15 @@ new → Creates an object
 
 () → Method call
 
-🧪 Syntax
-object instanceof ClassName
+Syntax
 
-💡 Example
+java
+Copy code
+object instanceof ClassName
+Example
+
+java
+Copy code
 String name = "Java";
 System.out.println(name.length());
-
 
