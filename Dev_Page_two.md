@@ -203,10 +203,157 @@ boolean isJavaFun = true;
   ```
 # Operators 
 
+# 🧮 Java Operators
 
-- Unary Operators
-- Arithmetic Operators
-- Relational & Conditional Operators
-- Assignment Operators
-- Logical & Shift Operators
-- Other Operators
+Operators in Java are special symbols used to perform operations on variables and values.
+
+────────────────────────────────────
+1️⃣ Unary Operators
+────────────────────────────────────
+📌 Definition:
+Unary operators operate on **a single operand**.
+
+📌 Types:
++  Unary plus (+)
+-  Unary minus (-)
+++ Increment
+-- Decrement
+!  Logical NOT
+
+📌 Syntax:
+operator operand
+
+📌 Example:
+int count = 5;
+count++;   // increment
+--count;  // decrement
+
+📌 Real-World Example:
+A website visitor counter increasing by 1 every time a user visits.
+
+────────────────────────────────────
+2️⃣ Arithmetic Operators
+────────────────────────────────────
+📌 Definition:
+Used to perform **basic mathematical operations**.
+
+📌 Operators:
++  Addition
+-  Subtraction
+*  Multiplication
+/  Division
+%  Modulus (remainder)
+
+📌 Syntax:
+result = operand1 operator operand2;
+
+📌 Example:
+int a = 10, b = 3;
+int sum = a + b;
+int remainder = a % b;
+
+📌 Real-World Example:
+Calculating total bill amount, discounts, or remaining balance.
+
+────────────────────────────────────
+3️⃣ Relational & Conditional Operators
+────────────────────────────────────
+📌 Definition:
+Used to **compare values** and return a boolean result.
+
+📌 Operators:
+==  Equal to
+!=  Not equal to
+>   Greater than
+<   Less than
+>=  Greater than or equal to
+<=  Less than or equal to
+?:  Ternary (conditional) operator
+
+📌 Syntax:
+condition ? value1 : value2;
+
+📌 Example:
+int age = 20;
+boolean canVote = age >= 18;
+
+String result = (age >= 18) ? "Eligible" : "Not Eligible";
+
+📌 Real-World Example:
+Checking eligibility for voting, loans, or job applications.
+
+────────────────────────────────────
+4️⃣ Assignment Operators
+────────────────────────────────────
+📌 Definition:
+Used to **assign values** to variables.
+
+📌 Operators:
+=   Assign
++=  Add and assign
+-=  Subtract and assign
+*=  Multiply and assign
+/=  Divide and assign
+%=  Modulus and assign
+
+📌 Syntax:
+variable operator value;
+
+📌 Example:
+int salary = 10000;
+salary += 2000;  // salary = salary + 2000
+
+📌 Real-World Example:
+Updating account balance after deposit or withdrawal.
+
+────────────────────────────────────
+5️⃣ Logical & Shift Operators
+────────────────────────────────────
+📌 Logical Operators (used with boolean):
+&&  Logical AND
+||  Logical OR
+!   Logical NOT
+
+📌 Shift Operators:
+<<  Left shift
+>>  Right shift
+>>> Unsigned right shift
+
+📌 Syntax:
+condition1 && condition2
+value << numberOfBits
+
+📌 Example:
+boolean isLoggedIn = true;
+boolean isAdmin = false;
+
+if (isLoggedIn && !isAdmin) {
+    System.out.println("User Access");
+}
+
+int x = 8;
+int result = x << 1;  // 16
+
+📌 Real-World Example:
+Authentication checks, permission systems, and performance optimizations.
+
+────────────────────────────────────
+6️⃣ Other Operators
+────────────────────────────────────
+📌 Includes:
+instanceof  → checks object type
+new         → creates object
+.           → access members
+[]          → array access
+()          → method call
+
+📌 Syntax:
+object instanceof ClassName
+
+📌 Example:
+String name = "Java";
+System.out.println(name.length());
+
+📌 Real-World Example:
+Checking object type before processing payments, files, or user inputs.
+
