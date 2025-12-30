@@ -108,7 +108,7 @@ Java has **8 primitive types**, grouped by the kind of data they hold.
 
 ────────────────────────────────────
 
-1️⃣ Integer Types
+1️ .Integer Types
 
 ────────────────────────────────────
 Type    | Size    | Range                          | Default
@@ -124,7 +124,7 @@ long population = 1400000000L;
 
 ────────────────────────────────────
 
-2️⃣ Floating-Point Types
+2️. Floating-Point Types
 
 ────────────────────────────────────
 Type    | Size    | Precision     | Default
@@ -202,158 +202,124 @@ boolean isJavaFun = true;
   }
   ```
 # Operators 
-
-# 🧮 Java Operators
-
 Operators in Java are special symbols used to perform operations on variables and values.
 
-────────────────────────────────────
-1️⃣ Unary Operators
-────────────────────────────────────
-📌 Definition:
-Unary operators operate on **a single operand**.
+1️. Unary Operators
 
-📌 Types:
-+  Unary plus (+)
--  Unary minus (-)
-++ Increment
--- Decrement
-!  Logical NOT
+Definition: Unary operators operate on **a single operand**.
 
-📌 Syntax:
-operator operand
+Types:
+        +  Unary plus (+)
+        -  Unary minus (-)
+        ++ Increment
+        -- Decrement
+        !  Logical NOT
 
-📌 Example:
-int count = 5;
-count++;   // increment
---count;  // decrement
+Syntax:
+      operator operand
 
-📌 Real-World Example:
-A website visitor counter increasing by 1 every time a user visits.
+Example:
+        int count = 5;
+        count++;   // increment
+        --count;  // decrement
 
-────────────────────────────────────
-2️⃣ Arithmetic Operators
-────────────────────────────────────
-📌 Definition:
-Used to perform **basic mathematical operations**.
+2️. Arithmetic Operators
 
-📌 Operators:
-+  Addition
--  Subtraction
-*  Multiplication
-/  Division
-%  Modulus (remainder)
+Definition: Used to perform **basic mathematical operations**.
 
-📌 Syntax:
-result = operand1 operator operand2;
+Operators:
+    +  Addition
+    -  Subtraction
+    *  Multiplication
+    /  Division
+    %  Modulus (remainder)
 
-📌 Example:
-int a = 10, b = 3;
-int sum = a + b;
-int remainder = a % b;
+Syntax: 
+    result = operand1 operator operand2;
 
-📌 Real-World Example:
-Calculating total bill amount, discounts, or remaining balance.
+Example:
+    int a = 10, b = 3;
+    int sum = a + b;
+    int remainder = a % b;
 
-────────────────────────────────────
-3️⃣ Relational & Conditional Operators
-────────────────────────────────────
-📌 Definition:
-Used to **compare values** and return a boolean result.
+3️. Relational & Conditional Operators
 
-📌 Operators:
-==  Equal to
-!=  Not equal to
->   Greater than
-<   Less than
->=  Greater than or equal to
-<=  Less than or equal to
-?:  Ternary (conditional) operator
+Definition: Used to **compare values** and return a boolean result.
 
-📌 Syntax:
-condition ? value1 : value2;
+Operators:
+        ==  Equal to
+        !=  Not equal to
+        >   Greater than
+        <   Less than
+        >=  Greater than or equal to
+        <=  Less than or equal to
+        ?:  Ternary (conditional) operator
 
-📌 Example:
-int age = 20;
-boolean canVote = age >= 18;
+Syntax:
+       condition ? value1 : value2;
 
-String result = (age >= 18) ? "Eligible" : "Not Eligible";
+Example:
+        int age = 20;
+        boolean canVote = age >= 18;
+        String result = (age >= 18) ? "Eligible" : "Not Eligible";
 
-📌 Real-World Example:
-Checking eligibility for voting, loans, or job applications.
+4️. Assignment Operators
 
-────────────────────────────────────
-4️⃣ Assignment Operators
-────────────────────────────────────
-📌 Definition:
-Used to **assign values** to variables.
+Definition: Used to **assign values** to variables.
 
-📌 Operators:
-=   Assign
-+=  Add and assign
--=  Subtract and assign
-*=  Multiply and assign
-/=  Divide and assign
-%=  Modulus and assign
+Operators:
+        =   Assign
+        +=  Add and assign
+        -=  Subtract and assign
+        *=  Multiply and assign
+        /=  Divide and assign
+        %=  Modulus and assign
 
-📌 Syntax:
-variable operator value;
+Syntax:
+       variable operator value;
 
-📌 Example:
-int salary = 10000;
-salary += 2000;  // salary = salary + 2000
+Example:
+        int salary = 10000;
+        salary += 2000;  // salary = salary + 2000
+        
+5️. Logical & Shift Operators
 
-📌 Real-World Example:
-Updating account balance after deposit or withdrawal.
+Logical Operators (used with boolean):
+        &&  Logical AND
+        ||  Logical OR
+        !   Logical NOT
+Shift Operators:
+        <<  Left shift
+        >>  Right shift
+        >>> Unsigned right shift
 
-────────────────────────────────────
-5️⃣ Logical & Shift Operators
-────────────────────────────────────
-📌 Logical Operators (used with boolean):
-&&  Logical AND
-||  Logical OR
-!   Logical NOT
+Syntax:
+        condition1 && condition2
+        value << numberOfBits
+Example:
+        boolean isLoggedIn = true;
+        boolean isAdmin = false;
 
-📌 Shift Operators:
-<<  Left shift
->>  Right shift
->>> Unsigned right shift
+        if (isLoggedIn && !isAdmin) {
+            System.out.println("User Access");
+        }
+        int x = 8;
+        int result = x << 1;  // 16
+        
+6️. Other Operators
 
-📌 Syntax:
-condition1 && condition2
-value << numberOfBits
+Includes:
+        instanceof  → checks object type
+        new         → creates object
+        .           → access members
+        []          → array access
+        ()          → method call
 
-📌 Example:
-boolean isLoggedIn = true;
-boolean isAdmin = false;
+Syntax:
+        object instanceof ClassName
 
-if (isLoggedIn && !isAdmin) {
-    System.out.println("User Access");
-}
+Example:
+        String name = "Java";
+        System.out.println(name.length());
 
-int x = 8;
-int result = x << 1;  // 16
-
-📌 Real-World Example:
-Authentication checks, permission systems, and performance optimizations.
-
-────────────────────────────────────
-6️⃣ Other Operators
-────────────────────────────────────
-📌 Includes:
-instanceof  → checks object type
-new         → creates object
-.           → access members
-[]          → array access
-()          → method call
-
-📌 Syntax:
-object instanceof ClassName
-
-📌 Example:
-String name = "Java";
-System.out.println(name.length());
-
-📌 Real-World Example:
-Checking object type before processing payments, files, or user inputs.
 
