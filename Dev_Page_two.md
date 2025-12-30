@@ -73,33 +73,33 @@ Symbol   Uses
 < >	Pass parameters to parameterized types 
 :	In For loops
 
-
- public class First {
-    void myMethod(int age , String name) {
-            System.out.println("Name: " + name + ", Age: " + age);
-            // method signature: myMethod(int, String)
-         }
-       public static void main(String[] args) {
-            First obj = new First();
-            obj.myMethod(25, "Alice");
-
-       }
-}
-
-public class First {
-  public static void main(String[] args) {
-    int [] number = new int[10];
-        List<String> list = new ArrayList<String>();
-        for(int i=0; i<10; i++) {
-            number[i] = i * 2;
-            list.add("Item " + i);
+Example 
+     public class First {
+        void myMethod(int age , String name) {
+                System.out.println("Name: " + name + ", Age: " + age);
+                // method signature: myMethod(int, String)
+             }
+           public static void main(String[] args) {
+                First obj = new First();
+                obj.myMethod(25, "Alice");
     
-        }
-        for(int num : number) {
-            System.out.println(num);
-        }
-  }
-}
+           }
+    }
+    
+    public class First {
+      public static void main(String[] args) {
+        int [] number = new int[10];
+            List<String> list = new ArrayList<String>();
+            for(int i=0; i<10; i++) {
+                number[i] = i * 2;
+                list.add("Item " + i);
+        
+            }
+            for(int num : number) {
+                System.out.println(num);
+            }
+      }
+    }
 ```
 # Primitives 
 
