@@ -107,7 +107,9 @@ In Java, primitive data types are the basic building blocks used to store simple
 Java has **8 primitive types**, grouped by the kind of data they hold.
 
 ────────────────────────────────────
+
 1️⃣ Integer Types
+
 ────────────────────────────────────
 Type    | Size    | Range                          | Default
 --------|---------|--------------------------------|---------
@@ -121,7 +123,9 @@ int age = 25;
 long population = 1400000000L;
 
 ────────────────────────────────────
+
 2️⃣ Floating-Point Types
+
 ────────────────────────────────────
 Type    | Size    | Precision     | Default
 --------|---------|---------------|---------
@@ -133,7 +137,9 @@ float price = 99.99f;
 double pi = 3.14159265359;
 
 ────────────────────────────────────
+
 3️⃣ Character Type
+
 ────────────────────────────────────
 Type | Size    | Description
 -----|---------|--------------------------
@@ -144,7 +150,9 @@ char grade = 'A';
 char symbol = '₹';
 
 ────────────────────────────────────
+
 4️⃣ Boolean Type
+
 ────────────────────────────────────
 Type     | Values
 ---------|---------------
