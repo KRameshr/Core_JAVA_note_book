@@ -101,16 +101,58 @@ Example
       }
     }
 ```
-# Primitives 
+# 🧱 Primitives in Java
 
-byte 
-short 
-int 
-long 
-float 
-double 
-char 
-boolean
+In Java, primitive data types are the basic building blocks used to store simple values.  
+Java has **8 primitive types**, grouped by the kind of data they hold.
+
+────────────────────────────────────
+1️⃣ Integer Types
+────────────────────────────────────
+Type    | Size    | Range                          | Default
+--------|---------|--------------------------------|---------
+byte    | 1 byte  | -128 to 127                    | 0
+short   | 2 bytes | -32,768 to 32,767              | 0
+int     | 4 bytes | -2³¹ to 2³¹−1                  | 0
+long    | 8 bytes | -2⁶³ to 2⁶³−1                  | 0L
+
+Example:
+int age = 25;
+long population = 1400000000L;
+
+────────────────────────────────────
+2️⃣ Floating-Point Types
+────────────────────────────────────
+Type    | Size    | Precision     | Default
+--------|---------|---------------|---------
+float   | 4 bytes | ~7 digits     | 0.0f
+double  | 8 bytes | ~15 digits    | 0.0d
+
+Example:
+float price = 99.99f;
+double pi = 3.14159265359;
+
+────────────────────────────────────
+3️⃣ Character Type
+────────────────────────────────────
+Type | Size    | Description
+-----|---------|--------------------------
+char | 2 bytes | Single Unicode character
+
+Example:
+char grade = 'A';
+char symbol = '₹';
+
+────────────────────────────────────
+4️⃣ Boolean Type
+────────────────────────────────────
+Type     | Values
+---------|---------------
+boolean  | true or false
+
+Example:
+boolean isJavaFun = true;
+
 
 # Primitive Conversions 
 
