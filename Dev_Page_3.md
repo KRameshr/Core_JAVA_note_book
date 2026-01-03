@@ -53,7 +53,7 @@ if (orderStatus.equals("NEW")) {
 
 ### 2. While Statement
 
-defination  :- 
+defination  :- A while statement in Java is a looping control statement used to repeatedly execute a block of code as long as a given boolean condition remains true.
 
 Syntax 
 ```
@@ -61,6 +61,24 @@ while (booleanExpression)
 {
     statement(s)
 }
+Example
+    int maxAttempts = 3;
+    int attemptCount = 0;
+    boolean isAuthenticated = false;
+    
+    while (attemptCount < maxAttempts && !isAuthenticated) {
+        System.out.println("Attempting user login...");
+    
+        isAuthenticated = true; // assume login success
+    
+        attemptCount++;
+    }
+    
+    if (isAuthenticated) {
+        System.out.println("User logged in successfully.");
+    } else {
+        System.out.println("Account locked due to multiple failed attempts.");
+    }
 
 ```
 ### 3. Do-while Statement
