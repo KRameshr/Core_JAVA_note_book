@@ -83,63 +83,126 @@ Example
 ```
 ### 3. Do-while Statement
 
-The syntax for the do-while statement is as follows:
+A do-while statement in Java is a looping control statement used to execute a block of code at least once, and then repeatedly execute it as long as a given boolean condition remains true.
 ```
-Java
+Syntax
 
 do {
     statement(s)
 } while (booleanExpression);
 
+Example
+int userChoice;
+
+do {
+    System.out.println("===== Application Menu =====");
+    System.out.println("1. View Profile");
+    System.out.println("2. Update Profile");
+    System.out.println("3. Logout");
+
+    // Simulating user input
+    userChoice = 3;
+
+    System.out.println("User selected option: " + userChoice);
+
+} while (userChoice != 3);
+
+System.out.println("User logged out successfully.");
+
+
 ```
 ### 4. For Statement
-The for statement uses the following syntax:
+A for statement in Java is a looping control statement used to execute a block of code a specific number of times.
 
-Java
+Syntax
 ```
 for (init; booleanExpression; update)
 {
     statement (s)
 }
+
+Example
+int totalEmployees = 5;
+
+for (int employeeId = 1; employeeId <= totalEmployees; employeeId++) {
+    System.out.println("Processing employee record ID: " + employeeId);
+}
+
+
+int[] orders = {101, 102, 103, 104, 105};
+
+for (int i = 0; i < orders.length; i++) {
+    int orderId = orders[i];
+    int digitLength = String.valueOf(orderId).length();
+
+    System.out.println(
+        "Processing order ID: " + orderId +
+        " | Digit length: " + digitLength
+    );
+}
+
 ```
 
 ### 5. Break Statement
 
-Usage: The Break Statement is used to break out of an enclosing for, while, do, or switch statement.
-Restriction: It cannot be used elsewhere, or it will result in a compilation error.
-```
-Example:
-Java
+The break statement is used to immediately terminate the execution of an enclosing loop or switch statement.
+After break is executed, program control moves to the statement following the loop or switch.
 
+```
+Syntax
 for (int i=0; i<10; i++) {
     if (j==6) {
         break;
     }
     System.out.println(i);
 }
+Example:
+
+int[] orderIds = {101, 102, 103, 104, 105};
+int targetOrderId = 103;
+
+for (int i = 0; i < orderIds.length; i++) {
+
+    if (orderIds[i] == targetOrderId) {
+        System.out.println("Target order found: " + targetOrderId);
+        break; // stop further processing
+    }
+
+    System.out.println("Checking order ID: " + orderIds[i]);
+}
+
 ```
 
 ### 6. Continue Statement
 
-Usage: The Continue Statement is similar to Break, but it only stops the execution of the current statement/iteration and causes control to return to the next iteration.
+Defnation: The continue statement is used to skip the remaining code of the current loop iteration and immediately move to the next iteration of the loop.
 ```
-Example:
-Java
-
-for (int i=0; i<10; i++) {
-    // Check condition
-    if (j==6) {
+Syntax
+for (int i = 0; i < n; i++) {
+    if (condition) {
         continue;
     }
-    System.out.println(i); 
+    // statements
+}
+
+Example:
+int[] orderIds = {101, 0, 102, -1, 103};
+
+for (int i = 0; i < orderIds.length; i++) {
+
+    // Skip invalid order IDs
+    if (orderIds[i] <= 0) {
+        continue;
+    }
+
+    System.out.println("Processing order ID: " + orderIds[i]);
 }
 
 ```
 ### 7. Switch Statement
-The syntax for the switch statement is as follows:
+A switch statement in Java is a multi-branch decision-making statement used to execute one block of code from multiple options, based on the value of a single expression.
 ```
-Java
-
+Syntax
 switch (expression)
 {
     case Value_1:
@@ -154,4 +217,27 @@ switch (expression)
     default:
         statement(s);
 }
+
+
+Example
+
+String orderStatus = "PAID";
+
+switch (orderStatus) {
+    case "NEW":
+        System.out.println("Order received and pending payment.");
+        break;
+
+    case "PAID":
+        System.out.println("Payment confirmed. Preparing shipment.");
+        break;
+
+    case "SHIPPED":
+        System.out.println("Order shipped to customer.");
+        break;
+
+    default:
+        System.out.println("Invalid order status.");
+}
+
 ```
