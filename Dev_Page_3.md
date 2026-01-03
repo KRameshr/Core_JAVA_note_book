@@ -15,19 +15,17 @@ This repository contains notes and examples regarding Java Control Flow Statemen
 
 ---
 
-## 1. If Statement
-[cite_start]The syntax of the `if` statement can be one of the following two forms[cite: 7, 17]:
+### 1. If Statement
+An if statement in Java is a decision-making (conditional) statement used to execute a block of code only when a given condition is true.
 
-### Option A: Simple If
-```java
+```
+Option A: If
 if (booleanExpression)
 {
     statement(s)
 }
 
-
- Option B: If-Else
-Java
+Option B: If-Else
 
 if (booleanExpression)
 {
@@ -37,6 +35,20 @@ else
 {
     statement(s)
 }
+example
+
+String orderStatus = "PAID";
+
+if (orderStatus.equals("NEW")) {
+    System.out.println("Order received and pending payment.");
+} else if (orderStatus.equals("PAID")) {
+    System.out.println("Payment confirmed. Preparing shipment.");
+} else if (orderStatus.equals("SHIPPED")) {
+    System.out.println("Order shipped to customer.");
+} else {
+    System.out.println("Invalid order status.");
+}
+
 ```
 
 ### 2. While Statement
