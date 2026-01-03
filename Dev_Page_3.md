@@ -4,7 +4,7 @@ Markdown
 
 This repository contains notes and examples regarding Java Control Flow Statements.
 
-## 📚 Table of Contents
+##  Table of Contents
 - [1. If Statement](#1-if-statement)
 - [2. While Statement](#2-while-statement)
 - [3. Do-while Statement](#3-do-while-statement)
