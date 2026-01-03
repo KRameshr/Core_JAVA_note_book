@@ -1,4 +1,3 @@
-Markdown
 
 # Core Java Statements
 
