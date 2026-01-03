@@ -26,7 +26,7 @@ if (booleanExpression)
 }
 
 
-Option B: If-Else
+ Option B: If-Else
 Java
 
 if (booleanExpression)
@@ -40,44 +40,44 @@ else
 ```
 
 ### 2. While Statement
-The syntax for the while statement is as follows:
 
-Java
+defination  :- 
 
+Syntax 
+```
 while (booleanExpression)
 {
     statement(s)
 }
 
+```
+### 3. Do-while Statement
 
-3. Do-while Statement
 The syntax for the do-while statement is as follows:
-
+```
 Java
 
 do {
     statement(s)
 } while (booleanExpression);
 
-
-4. For Statement
+```
+### 4. For Statement
 The for statement uses the following syntax:
 
 Java
-
+```
 for (init; booleanExpression; update)
 {
     statement (s)
 }
+```
 
-
-5. Break Statement
+### 5. Break Statement
 
 Usage: The Break Statement is used to break out of an enclosing for, while, do, or switch statement.
-
-
 Restriction: It cannot be used elsewhere, or it will result in a compilation error.
-
+```
 Example:
 Java
 
@@ -87,12 +87,12 @@ for (int i=0; i<10; i++) {
     }
     System.out.println(i);
 }
+```
 
-
-6. Continue Statement
+### 6. Continue Statement
 
 Usage: The Continue Statement is similar to Break, but it only stops the execution of the current statement/iteration and causes control to return to the next iteration.
-
+```
 Example:
 Java
 
@@ -104,10 +104,10 @@ for (int i=0; i<10; i++) {
     System.out.println(i); 
 }
 
-
-7. Switch Statement
+```
+### 7. Switch Statement
 The syntax for the switch statement is as follows:
-
+```
 Java
 
 switch (expression)
@@ -124,3 +124,4 @@ switch (expression)
     default:
         statement(s);
 }
+```
