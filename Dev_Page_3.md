@@ -37,9 +37,9 @@ else
 {
     statement(s)
 }
+```
 
-
-2. While Statement
+### 2. While Statement
 The syntax for the while statement is as follows:
 
 Java
