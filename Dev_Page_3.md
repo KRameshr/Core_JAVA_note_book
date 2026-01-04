@@ -509,3 +509,113 @@ The this keyword in Java refers to the current object of a class. It is commonly
 
 
 ### 11. Static Members
+
+
+1.Class-level members
+    - Static members belong to the class, not to individual objects.
+    - There’s only one copy of a static member shared across all instances of the class.
+2. No object needed
+  - You can access a static variable or method without creating an object.
+  - Syntax:
+   ```
+        ClassName.staticMember
+        
+     ```      
+        Example:
+      ```     
+        class Calculator {
+            static int count = 0; // static variable
+        
+            static void displayCount() { // static method
+                System.out.println("Count: " + count);
+            }
+        }
+        
+        public class Main {
+            public static void main(String[] args) {
+                Calculator.displayCount(); // Accessing without object
+                Calculator.count = 5;      // Direct access to static variable
+            }
+        }
+   ```
+3. Distinguish from local variables
+  - Local variables exist inside methods and are created fresh each time the method runs.
+  - Static variables exist once at the class level, so they retain values across method calls and objects.
+
+Example
+   ```
+package demo;
+
+/**
+ * Demonstrates the use of static and instance members in Java.
+ */
+public class Circle {
+
+    // Static variable - shared across all objects
+    private static final double PI;
+
+    // Instance variable - each object has its own copy
+    private int radius;
+
+    // Static block - runs once when the class is loaded
+    static {
+        System.out.println("Static block executed: Initializing PI");
+        PI = 3.141592653589793;
+    }
+
+    /**
+     * Constructor to initialize radius
+     *
+     * @param radius radius of the circle
+     */
+    public Circle(int radius) {
+        this.radius = radius;
+        System.out.println("Constructor executed for radius: " + radius);
+    }
+
+    /**
+     * Static method to get the value of PI
+     *
+     * @return value of PI
+     */
+    public static double getPi() {
+        return PI;
+    }
+
+    /**
+     * Instance method to calculate the area of the circle
+     *
+     * @return area of the circle
+     */
+    public double calculateArea() {
+        return PI * radius * radius;
+    }
+
+    /**
+     * Getter for radius
+     *
+     * @return radius of the circle
+     */
+    public int getRadius() {
+        return radius;
+    }
+
+    public static void main(String[] args) {
+
+        // Create Circle objects
+        Circle circle1 = new Circle(10);
+        Circle circle2 = new Circle(20);
+
+        // Access static member via class
+        System.out.println("Static variable PI: " + Circle.getPi());
+
+        // Access instance members via objects
+        System.out.println("Circle1 radius: " + circle1.getRadius() + ", Area: " + circle1.calculateArea());
+        System.out.println("Circle2 radius: " + circle2.getRadius() + ", Area: " + circle2.calculateArea());
+
+        // Static method access
+        System.out.println("Access PI using static method: " + Circle.getPi());
+    }
+}
+
+   ```
