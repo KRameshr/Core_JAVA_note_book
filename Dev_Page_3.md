@@ -439,10 +439,27 @@ public class First {
 
 ### 9. Encapsulation and Access Control
 
-Encapsulation: The process of wrapping code and data together into a single unit.
+Encapsulation is the process of wrapping data (variables) and methods (code) together into a single unit (class) and restricting direct access to the data.
 
+It is achieved using:
+    - Access control modifiers
+    - Getters and setters
+    
 Access Control Modifiers
 - Public
 - Private
 - Protected
 - Default
+
+  🔍 Access Modifiers – Visibility Table
+Modifier	Keyword	Same Class	Same Package	Subclass (Other Package)	Anywhere
+Public	public	✅	✅	✅	✅
+Private	private	✅	❌	❌	❌
+Protected	protected	✅	✅	✅	❌
+Default	(no keyword)	✅	✅	❌	❌
+🧪 Access Modifier Examples
+Modifier	Code Example	Typical Use Case
+public	public void showService()	APIs, services, entry points
+private	private long balance;	Sensitive data protection
+protected	protected String accountType;	Inheritance support
+default	String name;	Package-level access
