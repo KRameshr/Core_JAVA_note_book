@@ -252,6 +252,7 @@ switch (orderStatus) {
      An object is a real instance of a class
      
  ➤ What is a Java Object?
+ 
     A Java object is a runtime instance of a class.
     It represents a real-world entity and contains:
 ```
