@@ -369,10 +369,10 @@ Example
 public class First {
    
     public First(){
-        System.out.println("called default constructor"); 
+        System.out.println("called default constructor");  //default
     }
     
-    public First(String accountNumber, String accountType, long amount){
+    public First(String accountNumber, String accountType, long amount){ //par
         System.out.println("called parameter constructor"); 
         this.accountNumber=accountNumber;
         this.accounType=accountType;
