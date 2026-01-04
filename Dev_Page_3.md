@@ -268,4 +268,84 @@ Objects are created using the new keyword, which:
     - Returns a reference to the object    
 ```
 
+➤ What is a Java Class?
+
+A Java class is a user-defined data type that groups:
+
+- Fields (data)
+- Methods (behavior)
+- Constructors (object initialization)
+
+```
+Example
+class Student {
+    int id;
+    String name;
+
+    void display() {
+        System.out.println(id + " " + name);
+    }
+}
+```
+➤ Fields (Attributes)
+
+Fields are variables declared inside a class but outside methods.
+They store the state of an object.
+
+```
+Example
+int id;
+String name;
+```
+➤ Methods
+
+Methods define the behavior of an object.
+They contain logic to operate on fields.
+```
+Example
+void study() {
+    System.out.println("Student is studying");
+}
+```
+➤ The main Method
+
+The main method is the entry point of a Java application.
+```
+Syntax
+public static void main(String[] args)
+
+Example
+public static void main(String[] args) {
+    System.out.println("Program started");
+}
+```
+
+➤ Constructors
+
+A constructor is a special method used to initialize objects.
+
+Characteristics
+- Same name as class
+- No return type
+- Called automatically when an object is created
+```
+Example
+class Student {
+
+    int id;
+    String name;
+
+    // Constructor
+    Student(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+}
+```
+Creating Object Using Constructor
+
+```
+Student s1 = new Student(101, "Ramesh");
+```
+
 
