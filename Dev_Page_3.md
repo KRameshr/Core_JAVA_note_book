@@ -244,24 +244,27 @@ switch (orderStatus) {
         System.out.println("Invalid order status.");
 }
 ```
+
 ### 8. Java Objects and Classes
  # What are Java Objects and Classes?
  In Java, classes and objects are the core building blocks of Object-Oriented Programming (OOP).
      A class is a blueprint or template
      An object is a real instance of a class
-# ➤ What is a Java Object?
+ ➤ What is a Java Object?
 
 A Java object is a runtime instance of a class.
 It represents a real-world entity and contains:
-
+```
     State → stored in fields (attributes)
     Behavior → defined by methods
-# ➤ Creating an Object in Java
+```
+➤ Creating an Object in Java
 
 Objects are created using the new keyword, which:
+```
     - Allocates memory
     - Calls the constructor
     - Returns a reference to the object    
-
+```
 
 
