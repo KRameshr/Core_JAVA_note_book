@@ -250,10 +250,10 @@ switch (orderStatus) {
  In Java, classes and objects are the core building blocks of Object-Oriented Programming (OOP).
      A class is a blueprint or template
      An object is a real instance of a class
+     
  ➤ What is a Java Object?
-
-A Java object is a runtime instance of a class.
-It represents a real-world entity and contains:
+    A Java object is a runtime instance of a class.
+    It represents a real-world entity and contains:
 ```
     State → stored in fields (attributes)
     Behavior → defined by methods
