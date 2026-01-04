@@ -447,19 +447,16 @@ It is achieved using:
     
 Access Control Modifiers
 - Public
+       Accessible everywhere. APIs, services, entry points
+       - public / public void showService()     
 - Private
+       Accessible only within the class. Protects sensitive data
+      - private / private long balance;  
 - Protected
+      Accessible in the same package and subclasses. Supports inheritance
+       - protected / protected String accountType; 
 - Default
+       Accessible only within the same package. Package-level access
+       - (no keyword) / String name;
 
-  🔍 Access Modifiers – Visibility Table
-Modifier	Keyword	Same Class	Same Package	Subclass (Other Package)	Anywhere
-Public	public	✅	✅	✅	✅
-Private	private	✅	❌	❌	❌
-Protected	protected	✅	✅	✅	❌
-Default	(no keyword)	✅	✅	❌	❌
-🧪 Access Modifier Examples
-Modifier	Code Example	Typical Use Case
-public	public void showService()	APIs, services, entry points
-private	private long balance;	Sensitive data protection
-protected	protected String accountType;	Inheritance support
-default	String name;	Package-level access
+
