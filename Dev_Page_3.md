@@ -619,3 +619,68 @@ public class Circle {
 }
 
    ```
+
+### 12. Method Overloading
+
+Definition:
+Method overloading occurs when a class has multiple methods with the same name but different parameter lists (different type, number, or both).
+
+Key Points:
+- The method name must be the same.
+- Parameters must differ (number or type).
+- Return type can be same or different, but return type alone cannot distinguish overloaded methods.
+- Overloading allows similar operations to be performed with different types of input.
+
+example
+  ```
+package demo;
+
+/**
+ * Demonstrates constructor and method overloading for Triangle area calculation.
+ */
+public class Triangle {
+
+    // Instance variables
+    private int base;
+    private int height;
+    private int side1;
+    private int side2;
+    private int side3;
+
+    // Constructor for base-height triangle
+    public Triangle(int base, int height) {
+        this.base = base;
+        this.height = height;
+    }
+
+    // Constructor for triangle using 3 sides
+    public Triangle(int side1, int side2, int side3) {
+        this.side1 = side1;
+        this.side2 = side2;
+        this.side3 = side3;
+    }
+
+    // Method to calculate area using base and height
+    public double getArea() {
+        if (base > 0 && height > 0) {
+            return 0.5 * base * height;  // Triangle area formula
+        } else {
+            // Use Heron's formula if sides are set
+            double s = (side1 + side2 + side3) / 2.0;
+            return Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+        }
+    }
+
+    public static void main(String[] args) {
+        // Base-height triangle
+        Triangle t1 = new Triangle(10, 20);
+        System.out.println("Area of triangle (base-height): " + t1.getArea());
+
+        // Triangle with 3 sides
+        Triangle t2 = new Triangle(3, 4, 5);
+        System.out.println("Area of triangle (3 sides): " + t2.getArea());
+    }
+}
+
+  ```
+### 13. Pass by Value vs By Reference
