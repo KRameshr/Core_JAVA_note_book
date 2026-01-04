@@ -437,5 +437,12 @@ public class First {
 ```
 
 
+### 9. Encapsulation and Access Control
 
+Encapsulation: The process of wrapping code and data together into a single unit.
 
+Access Control Modifiers
+- Public
+- Private
+- Protected
+- Default
