@@ -244,7 +244,7 @@ switch (orderStatus) {
         System.out.println("Invalid order status.");
 }
 ```
-### 7. Java Objects and Classes
+### 8. Java Objects and Classes
 
 
 
