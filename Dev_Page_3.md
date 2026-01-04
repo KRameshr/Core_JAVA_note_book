@@ -279,42 +279,53 @@ A Java class is a user-defined data type that groups:
 ```
 Example
 public class First {
-String accountNumber;
-    String accounType;
+
+    String accountNumber;
+    String accountType;
     long amount;
-    public boolean withdrawAmount(long amt){
-        if(amt > amount){
+
+    // Withdraw money
+    public boolean withdrawAmount(long amt) {
+        if (amt > amount) {
             return false;
         } else {
-            amount = amount-amt;
+            amount = amount - amt;
             return true;
         }
     }
-    public boolean depositAmount(long amt){
-        if(amt < 0){
+
+    // Deposit money
+    public boolean depositAmount(long amt) {
+        if (amt <= 0) {
             return false;
-        } else{
+        } else {
             amount = amount + amt;
             return true;
         }
-        
     }
- public static void main(String[] args) {
-     First testObj = new First();
-     f.name = "Hello World";
-    System.out.println(f.getName());
-    testObj.accountNumber = "1234567890";
-    testObj.accounType = "Savings";
-    testObj.amount = 5000;
-    System.out.println("Initial Amount: " + testObj.amount + "\n" +
-    "Withdrawing 20000: " + testObj.withdrawAmount(20000) );
-    System.out.println("Initial Amount: " + testObj.amount + "\n" +
-    "depositAmount 20000: " + testObj.depositAmount(20000) );
-     System.out.println("Initial Amount: " + testObj.amount );
 
+    public static void main(String[] args) {
 
+        First testObj = new First();
 
+        testObj.accountNumber = "1234567890";
+        testObj.accountType = "Savings";
+        testObj.amount = 5000;
+
+        System.out.println(
+            "Initial Amount: " + testObj.amount +
+            "\nWithdrawing 20000: " + testObj.withdrawAmount(20000)
+        );
+
+        System.out.println(
+            "Amount After Withdrawal: " + testObj.amount +
+            "\nDepositing 20000: " + testObj.depositAmount(20000)
+        );
+
+        System.out.println("Final Amount: " + testObj.amount);
+    }
 }
+
 ```
 ➤ Fields (Attributes)
 
@@ -367,52 +378,64 @@ Characteristics
 ```
 Example
 public class First {
-   
-    public First(){
-        System.out.println("called default constructor");  //default
-    }
-    
-    public First(String accountNumber, String accountType, long amount){ //par
-        System.out.println("called parameter constructor"); 
-        this.accountNumber=accountNumber;
-        this.accounType=accountType;
-        this.amount=amount;
-    }
 
     String accountNumber;
-    String accounType;
+    String accountType;
     long amount;
-    public boolean withdrawAmount(long amt){
-        if(amt > amount){
+
+    // Default constructor
+    public First() {
+        System.out.println("Called default constructor");
+    }
+
+    // Parameterized constructor
+    public First(String accountNumber, String accountType, long amount) {
+        System.out.println("Called parameterized constructor");
+        this.accountNumber = accountNumber;
+        this.accountType = accountType;
+        this.amount = amount;
+    }
+
+    // Withdraw method
+    public boolean withdrawAmount(long amt) {
+        if (amt > amount) {
             return false;
         } else {
-            amount = amount-amt;
+            amount = amount - amt;
             return true;
         }
     }
-    public boolean depositAmount(long amt){
-        if(amt < 0){
+
+    // Deposit method
+    public boolean depositAmount(long amt) {
+        if (amt <= 0) {
             return false;
-        } else{
+        } else {
             amount = amount + amt;
             return true;
         }
-        
     }
-public static void main(String[] args) {
-  First testObj2 = new First("1234567890", "Savings",100);
-      System.out.println("Initial Amount: " + testObj.amount + "\n" +
-    "Withdrawing 20000: " + testObj2.withdrawAmount(20000) );
-    System.out.println("Initial Amount: " + testObj2.amount + "\n" +
-    "depositAmount 20000: " + testObj2.depositAmount(20000) );
-     System.out.println("Initial Amount: " + testObj2.amount );
+
+    public static void main(String[] args) {
+
+        First testObj = new First("1234567890", "Savings", 10000);
+
+        System.out.println(
+                "Initial Amount: " + testObj.amount +
+                "\nWithdrawing 2000: " + testObj.withdrawAmount(2000)
+        );
+
+        System.out.println(
+                "Amount After Withdrawal: " + testObj.amount +
+                "\nDepositing 20000: " + testObj.depositAmount(20000)
+        );
+
+        System.out.println("Final Amount: " + testObj.amount);
+    }
 }
-}
-```
-Creating Object Using Constructor
 
 ```
-Student s1 = new Student(101, "Ramesh");
-```
+
+
 
 
