@@ -459,4 +459,50 @@ Access Control Modifiers
        Accessible only within the same package. Package-level access
        - (no keyword) / String name;
 
+### 10. The this Keyword
 
+Definition:
+
+The this keyword in Java refers to the current object of a class. It is commonly used to:
+- Distinguish class fields from method or constructor parameters
+- Pass the current object as a parameter
+- Call other constructors from a constructor (constructor chaining
+
+  Exa
+  ```
+  public class BankAccount {
+
+    private String accountNumber;
+    private String accountType;
+    private double balance;
+
+    // Constructor
+    public BankAccount(String accountNumber, String accountType, double balance) {
+        // 'this' differentiates class fields from parameters
+        this.accountNumber = accountNumber;
+        this.accountType = accountType;
+        this.balance = balance;
+    }
+
+    // Method to deposit money
+    public void deposit(double balance) {
+        // 'this.balance' refers to the class field
+        this.balance += balance;
+        System.out.println("Deposited: " + balance + ", New Balance: " + this.balance);
+    }
+
+    // Method to display account details
+    public void displayAccount() {
+        System.out.println("Account Number: " + this.accountNumber);
+        System.out.println("Account Type: " + this.accountType);
+        System.out.println("Balance: " + this.balance);
+    }
+
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount("123456", "Savings", 5000);
+
+        account.deposit(2000);  // Depositing money
+        account.displayAccount(); // Display account info
+    }
+}
+```
