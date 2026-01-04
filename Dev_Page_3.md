@@ -7,6 +7,15 @@
 - [5. Break Statement](#5-break-statement)
 - [6. Continue Statement](#6-continue-statement)
 - [7. Switch Statement](#7-switch-statement)
+- [8. Java Objects and Classes](#8-java-objects-and-classes)
+- [9. Encapsulation and Access Control](#9-encapsulation-and-access-control)
+- [10. The this Keyword](#10-the-this-keyword)
+- [11. Static Members](#11-static-members)
+- [12. Method Overloading](#12-method-overloading)
+- [13. Pass by Value vs By Reference](#13-pass-by-value-vs-by-reference)
+- [14. Loading, Linking, and Initialization](#14-loading-linking-and-initialization)
+- [15. Comparing Objects](#15-comparing-objects)
+- [16. The Garbage Collector](#16-the-garbage-collector)
 
 ---
 
@@ -234,5 +243,10 @@ switch (orderStatus) {
     default:
         System.out.println("Invalid order status.");
 }
+```
+### 7. Java Objects and Classes
+
+
+
 
 ```
