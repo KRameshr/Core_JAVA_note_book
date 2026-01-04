@@ -278,13 +278,42 @@ A Java class is a user-defined data type that groups:
 
 ```
 Example
-class Student {
-    int id;
-    String name;
-
-    void display() {
-        System.out.println(id + " " + name);
+public class First {
+String accountNumber;
+    String accounType;
+    long amount;
+    public boolean withdrawAmount(long amt){
+        if(amt > amount){
+            return false;
+        } else {
+            amount = amount-amt;
+            return true;
+        }
     }
+    public boolean depositAmount(long amt){
+        if(amt < 0){
+            return false;
+        } else{
+            amount = amount + amt;
+            return true;
+        }
+        
+    }
+ public static void main(String[] args) {
+     First testObj = new First();
+     f.name = "Hello World";
+    System.out.println(f.getName());
+    testObj.accountNumber = "1234567890";
+    testObj.accounType = "Savings";
+    testObj.amount = 5000;
+    System.out.println("Initial Amount: " + testObj.amount + "\n" +
+    "Withdrawing 20000: " + testObj.withdrawAmount(20000) );
+    System.out.println("Initial Amount: " + testObj.amount + "\n" +
+    "depositAmount 20000: " + testObj.depositAmount(20000) );
+     System.out.println("Initial Amount: " + testObj.amount );
+
+
+
 }
 ```
 ➤ Fields (Attributes)
@@ -294,8 +323,9 @@ They store the state of an object.
 
 ```
 Example
-int id;
-String name;
+    String accountNumber;
+    String accounType;
+    long amount;
 ```
 ➤ Methods
 
@@ -303,9 +333,15 @@ Methods define the behavior of an object.
 They contain logic to operate on fields.
 ```
 Example
-void study() {
-    System.out.println("Student is studying");
-}
+public boolean depositAmount(long amt){
+        if(amt < 0){
+            return false;
+        } else{
+            amount = amount + amt;
+            return true;
+        }
+        
+    }
 ```
 ➤ The main Method
 
@@ -330,16 +366,47 @@ Characteristics
 - Called automatically when an object is created
 ```
 Example
-class Student {
-
-    int id;
-    String name;
-
-    // Constructor
-    Student(int id, String name) {
-        this.id = id;
-        this.name = name;
+public class First {
+   
+    public First(){
+        System.out.println("called default constructor"); 
     }
+    
+    public First(String accountNumber, String accountType, long amount){
+        System.out.println("called parameter constructor"); 
+        this.accountNumber=accountNumber;
+        this.accounType=accountType;
+        this.amount=amount;
+    }
+
+    String accountNumber;
+    String accounType;
+    long amount;
+    public boolean withdrawAmount(long amt){
+        if(amt > amount){
+            return false;
+        } else {
+            amount = amount-amt;
+            return true;
+        }
+    }
+    public boolean depositAmount(long amt){
+        if(amt < 0){
+            return false;
+        } else{
+            amount = amount + amt;
+            return true;
+        }
+        
+    }
+public static void main(String[] args) {
+  First testObj2 = new First("1234567890", "Savings",100);
+      System.out.println("Initial Amount: " + testObj.amount + "\n" +
+    "Withdrawing 20000: " + testObj2.withdrawAmount(20000) );
+    System.out.println("Initial Amount: " + testObj2.amount + "\n" +
+    "depositAmount 20000: " + testObj2.depositAmount(20000) );
+     System.out.println("Initial Amount: " + testObj2.amount );
+}
 }
 ```
 Creating Object Using Constructor
