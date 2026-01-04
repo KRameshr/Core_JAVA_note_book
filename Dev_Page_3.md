@@ -508,4 +508,4 @@ The this keyword in Java refers to the current object of a class. It is commonly
    ```
 
 
-### 11. The this Keyword
+### 11. Static Members
