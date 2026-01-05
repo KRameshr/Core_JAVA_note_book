@@ -729,3 +729,54 @@ public class First {
 }
  ```
 ### 14. Loading, Linking, and Initialization
+
+# Loading
+- JVM loads the .class file into memory.
+- Done by ClassLoader.
+- Creates a Class object.
+- Loads:
+    - Class name
+    - Parent class
+    - Methods & variables info
+✔ Happens only once per class
+
+# Linking
+
+Linking prepares the class to run.
+
+a) Verification
+- Checks whether the class file is safe and valid.
+- Ensures:
+    - Correct bytecode
+    - No illegal access
+-If failed → VerifyError
+
+ b) Preparation
+ - JVM allocates memory for static variables.
+ - Static variables get default values.
+ ```
+    Example:
+    
+    static int a;      // 0
+    static double b;  // 0.0
+    static Object o;  // null
+ ```
+
+ c) Resolution
+ - JVM replaces names with real memory references.
+ - Method & variable calls are linked to actual locations.
+
+ # Initialization
+ - Static variables get actual values.
+ - Static blocks are executed.
+ - Executes top to bottom.
+ - Example:
+   ```  
+    class Demo {
+        static int x = 10;
+    
+        static {
+            System.out.println("Static block executed");
+        }
+    }
+ ```
