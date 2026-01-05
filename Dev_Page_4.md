@@ -104,7 +104,7 @@ public int hashCode() {
 - Called by GC before object destruction
 - Not guaranteed to execute
 ```
-  @Override
+@Override
 protected void finalize() {
     System.out.println("inside object finalize method");
 }
