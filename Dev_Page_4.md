@@ -132,7 +132,7 @@ Once created:
     - obj.getClass() → returns that shared object
 
 ```
-# Ways to Obtain a Class Object
+Ways to Obtain a Class Object
 ```
     // 1. Using getClass()
     String s = "Hello";
@@ -145,7 +145,7 @@ Once created:
     Class<?> c3 = Class.forName("java.lang.String");
 ```
 Methods
-# public static Class forName(String className)
+public static Class forName(String className)
 
 - Loads a class dynamically at runtime
 - Used in frameworks like Spring, Hibernate, JDBC
