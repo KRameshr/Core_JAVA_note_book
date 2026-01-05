@@ -191,7 +191,164 @@ public class First {
 }
 ```
 ## 3. System Class
+- java.lang.System is a final class exposing utility functions
+- It provides utility functions related to the system.
+- Since it is in java.lang, no import is required.
+
+All members are static, so we access them using System.
+
+- public static final java.io.PrintStream out;
+- public static final java.io.PrintStream err;
+- Public static final java.io.InputStream in;
+- public static long currentTimeMillis();
+- public static Sring getProperty(String propName);
+
+example
+```
+package Demo;
+
+public class First {
+
+    public static void main(String[] args) {
+
+        long startTime = System.currentTimeMillis();
+        System.out.println("Hello, World!");
+        System.out.print("This is my first Java program.");
+        System.err.println(" Let's learn Java together!");
+        System.err.println(getTestUserInpput());
+
+       long nstartTime = System.currentTimeMillis();
+       System.out.println("inital time: "+ startTime );
+       System.out.println("after  time: "+ nstartTime );
+       System.out.println("final time: "+ ( nstartTime -startTime));
+
+       System.out.println(System.getProperty("os.name"));
+       System.out.println(System.getProperty("user.name"));
+       System.out.println(System.getProperty("java.version"));
+    }
+
+    public static String getTestUserInpput(){
+        StringBuffer sb = new StringBuffer();
+        try{
+            char c = (char)System.in.read();
+            while(c != '\r'){
+                sb.append(c);
+                c = (char)System.in.read();
+            }
+            System.out.println(c);
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return sb.toString();
+    }
+
+
+}
+   
+```
+
 ## 4. String Class
+
+- java.lang.String represents text (a sequence of characters).
+- It is immutable (cannot be changed once created).
+- Because it is immutable, it is thread-safe.
+        Once a String object is created, its value cannot be changed. Any modification creates a new String object.
+- Java uses String Pooling to save memory.
+     Java stores String literals in a special memory area called String Pool. If the same value exists, Java reuses the object instead of creating a new one.
+- Some methods
+ public int length()
+ public String subString(int beginIndex)
+ public String[] split (String regex)
+
+example 
+```
+package Demo;
+
+public class First {
+    public static void main(String[] args) {
+        String message = "Hello, World!";
+        String additional = "Hello, World";
+
+        System.out.println(message.length());
+        System.out.println(additional.length());
+        System.out.println(additional.substring(1,2));
+        String[] s = message.split(" ");
+        for(String str : s){
+            System.out.println("str is :- "+str);
+        }
+
+        Runtime runtime = Runtime.getRuntime();
+        System.gc();
+        System.out.println("Total Memory: "+ runtime.totalMemory());//check JMV memory 
+        System.out.println("Total Memory before starting is: "+ (runtime.totalMemory())/(1024*1024));
+        System.out.println("Free Memory before starting is: "+ (runtime.freeMemory())/(1024*1024));
+        System.out.println("Use Memory before starting is: "+ ((runtime.totalMemory()-runtime.freeMemory()))/(1024*1024));
+
+        for(int i=0; i<100000; i++){
+             message = message + additional;
+        }
+        System.out.println("Total Memory before finishing is: "+ (runtime.totalMemory())/(1024*1024));
+        System.out.println("Free Memory before finishing is: "+ (runtime.freeMemory())/(1024*1024));
+        System.out.println("Use Memory before finishing is: "+ ((runtime.totalMemory()-runtime.freeMemory()))/(1024*1024));
+        System.gc();
+        String combined = new String("Hello, World!");
+        if(message == additional ){
+            System.out.println("Both strings are the same.");
+        } else if(message == combined) {
+            System.out.println("Strings are different.");
+        }else {
+            System.out.println("Strings are different.");
+        }
+    }
+}
+```
+
+# String Classes : StringBuffer
+ java.lang.StringBuffer is used for string manipulation.
+ It is mutable, unlike java.lang.String.
+ It is thread-safe, hence little expensive to work with.
+
+# String Classes : StringBuilder
+ java.lang.StringBuilder is used for string manipulation.
+ It is also mutable, like java.lang.StringBuffer.
+ It is not thread-safe, hence useful where we don’t need shared resources.
+ Some methods are :-
+ public int capacity()
+ public StringBuilder append(String args)
+ public StringBuilder insert (int offset, String args)
+
+example
+```
+package Demo;
+
+ public class First {
+    public static void main(String[] args) {
+        StringBuffer str1 = new StringBuffer("Hello");
+    
+      
+        System.out.println(str1.length());
+        System.out.println(str1.capacity());
+        System.out.println(str1);
+
+
+        Runtime runtime = Runtime.getRuntime();
+        System.gc();
+        System.out.println("Total Memory: "+ runtime.totalMemory());//check JMV memory 
+        System.out.println("Total Memory before starting is: "+ (runtime.totalMemory())/(1024*1024));
+        System.out.println("Free Memory before starting is: "+ (runtime.freeMemory())/(1024*1024));
+        System.out.println("Use Memory before starting is: "+ ((runtime.totalMemory()-runtime.freeMemory()))/(1024*1024));
+
+        for(int i=0; i<5000; i++){
+             str1.append("Today");
+        }
+        System.out.println("Total Memory before finishing is: "+ (runtime.totalMemory())/(1024*1024));
+        System.out.println("Free Memory before finishing is: "+ (runtime.freeMemory())/(1024*1024));
+        System.out.println("Use Memory before finishing is: "+ ((runtime.totalMemory()-runtime.freeMemory()))/(1024*1024));
+        System.gc();
+    }
+ }    
+```
 ## 5. Arrays
 ## 6. Boxing and Unboxing
 ## 7. Varargs
