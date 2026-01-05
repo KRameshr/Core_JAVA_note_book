@@ -684,3 +684,48 @@ public class Triangle {
 
   ```
 ### 13. Pass by Value vs By Reference
+- Primitive variables are passed by value in a method and their values don’t change in calling method.
+- Changes in the reference variables which are done in the called method, are also seen by the calling method.
+
+ ```
+package Demo;
+
+// Helper class for reference example
+class TestRef {
+    int val;
+}
+
+public class First {
+
+    // Primitive variable example
+    public static void changeVariable(int a) {
+        a = a + 10;
+        System.out.println("Inside primitive method: " + a);
+    }
+
+    // Reference variable example
+    public static void changeVariable(TestRef obj) {
+        obj.val = 10;
+        System.out.println("Inside reference method: " + obj.val);
+    }
+
+    public static void main(String[] args) {
+
+        // Primitive case
+        int a = 5;
+        System.out.println("Before primitive method: " + a);
+        changeVariable(a);
+        System.out.println("After primitive method: " + a);
+
+        System.out.println("--------------------------------");
+
+        // Reference case
+        TestRef ref = new TestRef();
+        ref.val = 5;
+        System.out.println("Before reference method: " + ref.val);
+        changeVariable(ref);
+        System.out.println("After reference method: " + ref.val);
+    }
+}
+ ```
+### 14. Loading, Linking, and Initialization
