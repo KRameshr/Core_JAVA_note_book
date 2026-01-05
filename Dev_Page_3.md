@@ -771,7 +771,7 @@ a) Verification
  - Static blocks are executed.
  - Executes top to bottom.
  - Example:
-   ```  
+```  
     class Demo {
         static int x = 10;
     
@@ -780,17 +780,20 @@ a) Verification
         }
     }
  ```
-```
+
 ### 15. Comparing Objects 
 - == compares memory reference of two objects.
 - It checks whether both variables point to the same object.
-  ```
+  
+```
  obj1 == obj2   // checks reference
  ```
+
 - By default, equals() also compares reference only.
 - To compare object data, we must override:
     - equals()
     - hashCode()
+
 ```
 Example
     First a = new First(5);
@@ -798,7 +801,7 @@ Example
     System.out.println(a == b);        // false
     System.out.println(a.equals(b));   // false (without override)
 ```
-```
+
 ### 16. The Garbage Collector 
  JVM runs the garbage collector program to free the unused
 memory.
