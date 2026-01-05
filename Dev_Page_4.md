@@ -257,9 +257,9 @@ public class First {
 - Java uses String Pooling to save memory.
      Java stores String literals in a special memory area called String Pool. If the same value exists, Java reuses the object instead of creating a new one.
 - Some methods
- public int length()
- public String subString(int beginIndex)
- public String[] split (String regex)
+  - public int length()
+  - public String subString(int beginIndex)
+  - public String[] split (String regex)
 
 example 
 ```
@@ -304,19 +304,19 @@ public class First {
 }
 ```
 
-# String Classes : StringBuffer
- java.lang.StringBuffer is used for string manipulation.
- It is mutable, unlike java.lang.String.
- It is thread-safe, hence little expensive to work with.
+ String Classes : StringBuffer
+ - java.lang.StringBuffer is used for string manipulation.
+ - It is mutable, unlike java.lang.String.
+ - It is thread-safe, hence little expensive to work with.
 
-# String Classes : StringBuilder
- java.lang.StringBuilder is used for string manipulation.
- It is also mutable, like java.lang.StringBuffer.
- It is not thread-safe, hence useful where we don’t need shared resources.
- Some methods are :-
- public int capacity()
- public StringBuilder append(String args)
- public StringBuilder insert (int offset, String args)
+ String Classes : StringBuilder
+  - java.lang.StringBuilder is used for string manipulation.
+  - It is also mutable, like java.lang.StringBuffer.
+  - It is not thread-safe, hence useful where we don’t need shared resources.
+ Some methods are :-
+  - public int capacity()
+  - public StringBuilder append(String args)
+  - public StringBuilder insert (int offset, String args)
 
 example
 ```
