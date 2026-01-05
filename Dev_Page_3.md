@@ -803,7 +803,7 @@ Example
 ```
 
 ### 16. The Garbage Collector 
- JVM runs the garbage collector program to free the unused
+- JVM runs the garbage collector program to free the unused
 memory.
- So unlike C++, in java you don’t have to explicitly free memory
+- So unlike C++, in java you don’t have to explicitly free memory
 references.
