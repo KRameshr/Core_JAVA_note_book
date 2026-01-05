@@ -116,6 +116,80 @@ System.out.println(obj.getClass().getName());
 ```
 
 ## 2. Class Class
+
+What is java.lang.Class?
+- Class represents the runtime metadata of a Java class.
+- A Class object is created when the JVM loads the class, not when an object is created.
+- Only one Class object exists per loaded class.
+- All objects of the same class share the same Class object.
+
+How a Class Object is Created
+```
+.class file → ClassLoader → java.lang.Class object
+
+Once created:
+    - new ObjectDemo() → uses the same Class object
+    - obj.getClass() → returns that shared object
+
+```
+# Ways to Obtain a Class Object
+```
+    // 1. Using getClass()
+    String s = "Hello";
+    Class<?> c1 = s.getClass();
+    
+    // 2. Using .class
+    Class<?> c2 = String.class;
+    
+    // 3. Using Class.forName()
+    Class<?> c3 = Class.forName("java.lang.String");
+```
+Methods
+# public static Class forName(String className)
+
+- Loads a class dynamically at runtime
+- Used in frameworks like Spring, Hibernate, JDBC
+```
+Class<?> cls = Class.forName("Demo.ObjectDemo");
+```
+Object Creation 
+```
+cls.getDeclaredConstructor().newInstance();
+
+Example 
+
+ObjectDemo.java
+package Demo;
+
+public class ObjectDemo {
+    public String info = "Reflection example";
+}
+
+📄 First.java
+package Demo;
+
+public class First {
+    public static void main(String[] args) {
+
+        String info = "Hello World";
+        Class<?> testClass = info.getClass();
+        System.out.println("testClass name is " + testClass.getName());
+
+        try {
+            Class<?> testClass2 = Class.forName("Demo.ObjectDemo");
+            System.out.println("testClass2 name is " + testClass2.getName());
+
+            ObjectDemo obj1 =
+                (ObjectDemo) testClass2.getDeclaredConstructor().newInstance();
+
+            System.out.println("obj1 info is " + obj1.info);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
 ## 3. System Class
 ## 4. String Class
 ## 5. Arrays
