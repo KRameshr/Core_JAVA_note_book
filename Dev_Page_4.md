@@ -357,16 +357,17 @@ package Demo;
 
 - Useful Methods
    copyOf()
-  ```
+```
     public static int[] copyOf(int[] original, int newLength)
 ```
   Creates a new array with the given length.
 
     copyOfRange()
-    ```
+```
     public static int[] copyOfRange(int[] original, int from, int to)
-    ```
+```
      Copies elements from index from to to-1.
+     
 ## 6. Boxing and Unboxing
 ## 7. Varargs
 ## 8. format() and printf() Methods
