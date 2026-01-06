@@ -436,4 +436,28 @@ public class First {
 
 ```  
 ## 7. Varargs
+
+- Pass any number of parameters in a method.
+- E.g. public int checksum(int … vals)
+- Helpful when one needs a flexibility of passing some unknown number of
+  parameters, without creating an array.
+
+```  
+Example
+public int checksum(int... vals) {
+    int sum = 0;
+    for (int v : vals) {
+        sum += v;
+    }
+    return sum;
+}
+
+Usage
+checksum(10);
+checksum(10, 20, 30);
+checksum(5, 15, 25, 35);
+```  
 ## 8. format() and printf() Methods
+
+Examples of using Varargs
+  E.g public static String format(String formatString, Object... args)
