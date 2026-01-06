@@ -408,5 +408,32 @@ public class First {
 ``` 
 
 ## 6. Boxing and Unboxing
+
+- Wrapper classes v/s primitive variables.
+- Conversion of primitive type to Wrapper type is called boxing.
+- Conversion of Wrapper type to primitive type is called unboxing
+  Example
+  
+``` 
+   package Demo;
+
+
+public class First {
+    public static void main(String[] args) {
+      int i = 5;
+     Integer j = new  Integer(5);
+     j=i; //unboxing
+     System.out.println(j);
+     boolean b = true;
+     Boolean bObj = new Boolean(true);
+
+     i = j; //boxing
+
+        System.out.println(i);
+    }
+ }
+
+
+```  
 ## 7. Varargs
 ## 8. format() and printf() Methods
