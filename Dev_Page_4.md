@@ -365,9 +365,48 @@ package Demo;
     copyOfRange()
 ```
     public static int[] copyOfRange(int[] original, int from, int to)
-```
+
      Copies elements from index from to to-1.
+
+     example 
+
      
+
+ package Demo;
+
+import java.util.Arrays;
+
+public class First {
+    public static void main(String[] args) {
+        int[] intArray ;
+        intArray = new int[]{2,3,5,7,11};
+        for(int i : intArray){
+           // System.out.println(i);
+        }
+        int[][] twoDArray = new int[3][];
+        twoDArray[0] = new int[]{1,2};
+        twoDArray[1] = new int[]{3,4,5};
+        //  for (int[] i : twoDArray) {
+        //     for (int j : i) {
+        //         System.out.println(" " + j);
+        //     }
+        //     System.out.println(" ");
+        // }
+        intArray = Arrays.copyOf(intArray, 2);
+        for(int j : intArray){
+            System.out.println(j);
+        }
+
+        intArray = Arrays.copyOfRange(intArray, 2,5);
+        for(int i : intArray){
+            System.out.println(i);
+        }
+    
+    }
+ }
+
+``` 
+
 ## 6. Boxing and Unboxing
 ## 7. Varargs
 ## 8. format() and printf() Methods
