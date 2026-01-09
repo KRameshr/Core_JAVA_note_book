@@ -6,8 +6,10 @@
 ## 1. exception
 
 - What is exception?
-  package Demo;
-```
+
+- ```
+package Demo;
+
 public class First  {
 
     
