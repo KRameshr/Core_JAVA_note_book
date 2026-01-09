@@ -465,7 +465,8 @@ checksum(5, 15, 25, 35);
 ```  
 ## 8. format() and printf() Methods
 
-Examples of using Varargs
+  Examples of using Varargs
+  
   E.g public static String format(String formatString, Object... args)
 
 
