@@ -16,7 +16,7 @@
 - [14. The instanceof Keyword](#14-the-instanceof-keyword)
 
 
-##  exception
+## 1.exception
  What is exception?
  Constructs to deal with exceptions
  Classification of exceptions
