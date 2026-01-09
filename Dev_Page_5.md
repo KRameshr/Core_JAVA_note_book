@@ -5,7 +5,12 @@
 
 ## 1. exception
 
-- What is exception?
+# What is exception?
+- java.lang.Exception object encapsulates the error conditions and throws it back to the running code.
+- Sub class of Throwable.
+- Class “Error” denotes the fatal errors.
+- Class “Exception” denotes non-fatal errors.
+- Helpful in providing answers to what ,how and where things went wrong in the code.
 
 ```
 package Demo;
