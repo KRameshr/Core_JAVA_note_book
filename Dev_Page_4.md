@@ -8,6 +8,12 @@
 - [6. Boxing and Unboxing](#6-boxing-and-unboxing)
 - [7. Varargs](#7-varargs)
 - [8. format() and printf() Methods](#8-format-and-printf-methods)
+- [9. What is Inheritance?](#9-what-is-inheritance)
+- [10. Accessibility](#10-accessibility)
+- [11. Method Overriding](#11-method-overriding)
+- [12. Calling the Superclass’s Constructors](#12-calling-the-superclasss-constructors)
+- [13. Type Casting](#13-type-casting)
+- [14. The instanceof Keyword](#14-the-instanceof-keyword)
 
 ## 1. Object Class
 - Object is the root (parent) class of all Java classes.
@@ -464,4 +470,120 @@ Examples of using Varargs
 
 
   overriding methord signature  is same
+
+
+## 9. What is Inheritance?
+- Concept of OOP, using which we organize classes in hierarchy.
+- Used to avoid redundancy and avoid duplication
+- Child classes are created using “extends” keyword.
+- Parent class is called as “Super Class” and child is called as a “Sub Class”.
+- No multiple inheritance in java.
+- Inheritance creates “Is a” relationship between classes
+- Let’s see the code
+
+```  
+package Demo;
+
+public class First {
+  String color ="blue";
+  boolean isFilled = true;
+
+  public String getColor() {
+    return this.color;
+  }
+  public void setColor(String color) {
+    this.color = color;
+  }
+  public boolean isFilled() {
+    return this.isFilled;
+  }
+   public void setisFilled(Boolean isfilled) {
+    this.isFilled = isfilled;
+  }
+  public static void main(String[] args) {
+    First f = new First();
+    f.setColor("Red");
+    f.setisFilled(true);
+
+    System.out.format("Color: " + f.getColor() + " and " + f.isFilled());
+
+    circle c = new circle();
+    c.radius = 5;
+    System.out.format("\nArea of Circle: " + c.getArea());
+    System.out.format("\nCircumference of Circle: " + c.getcircumference());
+  }
+ }
+
+ class circle extends First {
+   int radius;
+   final static  double pi = 3.14;
+
+   public double getArea() {
+     return pi * radius * radius;
+   }
+   public double getcircumference() {
+     return 2 * pi * radius;
+   }
+ }
+    
+``` 
+## 10. Accessibility
+- Within a package, a sub class can access all non-private members of super class.
+- Outside package, only public and protected members could be accessed by a sub class.
+- Time to code.
+  
+## 11. Method Overriding
+
+- When a sub class changes the behavior of a method of its parent class, that is known as method overriding.
+- Method signature needs to be same for calling it method overriding.
+- Different from method overloading.
+- Use “final” to prevent method overriding
+
+``` 
+package Demo;
+
+public class First {
+    int side = 5;
+
+    // Method Overloading
+    public int getArea() {
+        return side * side;
+    }
+
+    public int getArea(int a) {
+        return side * a;
+    }
+
+    public static void main(String[] args) {
+        Square s = new Square();
+        s.setDimensions(4, 4);
+
+        // Overridden method (runtime polymorphism)
+        System.out.println("Area using overridden method: " + s.getArea());
+
+        // Overloaded method (compile-time polymorphism)
+        System.out.println("Area using overloaded method: " + s.getArea(6));
+    }
+}
+
+class Square extends First {
+    private int length;
+    private int width;
+
+    public void setDimensions(int length, int width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    // Method Overriding
+    @Override
+    public int getArea() {
+        return length * width;
+    }
+}
+``` 
+## 12. Calling the Superclass’s Constructors
+## 13. Type Casting
+## 14. The instanceof Keyword
+
   
