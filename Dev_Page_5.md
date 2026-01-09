@@ -7,7 +7,7 @@
 
 - What is exception?
 
-- ```
+```
 package Demo;
 
 public class First  {
