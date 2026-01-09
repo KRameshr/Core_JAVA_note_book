@@ -648,14 +648,17 @@ class Second {
 ## 13. Type Casting
 
 - Assign an object to a super class variable, aka upcasting.
+  
   ``` 
   E.g. Parent p = new Child();
-  ``` 
-- Assign an object referred by a super class variable, to a sub class variable, aka downcasting.
+  ```
+  
+- Assign an object referred by a super class variable, to a sub class variable, aka downcasting.\
+  
   ``` 
     E.g. Parent p = new Child()
     Child c = (Child)p;
-``` 
+   ``` 
 ``` 
 package Demo;
 
