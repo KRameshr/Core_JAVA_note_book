@@ -748,7 +748,12 @@ class Second {
 
 
 ## 14. The instanceof Keyword
-``` 
+
+- The “instanceof” keyword can be used to test if an object is of a specified type.
+- Applying “instanceof” on a null reference variable returns false
+- A sub class will always pass the test made by “instanceof” to checkfor the super class type.
+  
+```
 package Demo;
 
 public class First extends Second {
