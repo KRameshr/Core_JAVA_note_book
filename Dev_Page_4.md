@@ -583,7 +583,254 @@ class Square extends First {
 }
 ``` 
 ## 12. Calling the Superclass’s Constructors
+
+- When a sub class wants to get a parent class’ members, it uses the keyword “super”.
+- Also used for calling parent class’ constructor.
+
+``` 
+
+package Demo;
+
+public class First extends Second {
+
+    // default constructor child
+    public First() {
+        super(); // calls parent default constructor
+        System.out.println("First One is here");
+    }
+
+    int side;
+
+    // parameterized constructor child
+    public First(int side) {
+        super(side, side); // calls parent parameterized constructor
+        this.side = side;
+        System.out.println("Side is " + side);
+    }
+
+    public static void main(String[] args) {
+        First f = new First();
+        System.out.println("-------------------");
+        First s1 = new First(4);
+        System.out.format("\nThe value of s1 is %s\n", s1.side);
+        System.out.println("Area is: " + s1.getArea());
+    }
+
+    // calling parent method
+    public int getArea() {
+        return super.getArea();
+    }
+}
+
+class Second {
+
+    int l, b;
+
+    // default constructor parent
+    public Second() {
+        System.out.println("Coming is Second's Const");
+    }
+
+    // parameterized constructor parent
+    public Second(int l, int b) {
+        this.l = l;
+        this.b = b;
+        System.out.format("Coming is Second's Const with values %s and %s\n", l, b);
+    }
+
+    // parent method
+    public int getArea() {
+        return l * b;
+    }
+}
+
+``` 
 ## 13. Type Casting
+
+- Assign an object to a super class variable, aka upcasting.
+  ``` 
+  E.g. Parent p = new Child();
+  ``` 
+- Assign an object referred by a super class variable, to a sub class variable, aka downcasting.
+  ``` 
+    E.g. Parent p = new Child()
+    Child c = (Child)p;
+``` 
+``` 
+package Demo;
+
+public class First extends Second {
+
+    private int side;
+
+    // Default constructor
+    public First() {
+        super();
+        System.out.println("First class default constructor called");
+    }
+
+    // Parameterized constructor
+    public First(int side) {
+        super(side, side);
+        this.side = side;
+        System.out.println("First class parameterized constructor called with side = " + side);
+    }
+
+    // Overriding parent method (Runtime Polymorphism)
+    @Override
+    public int getArea() {
+        return side * side;
+    }
+
+    // Getter
+    public int getSide() {
+        return side;
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println("------ Object Creation ------");
+        First f = new First();
+
+        System.out.println("\n------ Parameterized Object ------");
+        First s1 = new First(4);
+        System.out.println("Side: " + s1.getSide());
+        System.out.println("Area: " + s1.getArea());
+
+        System.out.println("\n------ Runtime Polymorphism (Upcasting) ------");
+        Second parent = new First(5);
+        System.out.println("Area using parent reference: " + parent.getArea());
+
+        System.out.println("\n------ Downcasting ------");
+        if (parent instanceof First) {
+            First child = (First) parent;
+            System.out.println("Area using child reference: " + child.getArea());
+        }
+
+        System.out.println("\n------ instanceof Check ------");
+        if (parent instanceof Second) {
+            System.out.println("parent is an instance of Second");
+        }
+
+        if (parent instanceof First) {
+            System.out.println("parent is an instance of First");
+        }
+    }
+}
+
+class Second {
+
+    protected int length;
+    protected int breadth;
+
+    // Default constructor
+    public Second() {
+        System.out.println("Second class default constructor called");
+    }
+
+    // Parameterized constructor
+    public Second(int length, int breadth) {
+        this.length = length;
+        this.breadth = breadth;
+        System.out.println("Second class parameterized constructor called with values: "
+                + length + ", " + breadth);
+    }
+
+    // Parent method
+    public int getArea() {
+        return length * breadth;
+    }
+}
+``` 
+
+
 ## 14. The instanceof Keyword
+``` 
+package Demo;
+
+public class First extends Second {
+
+    private int side;
+
+    // Default constructor
+    public First() {
+        super();
+        System.out.println("First class default constructor called");
+    }
+
+    // Parameterized constructor
+    public First(int side) {
+        super(side, side);
+        this.side = side;
+        System.out.println("First class parameterized constructor called with side = " + side);
+    }
+
+    // Overriding parent method (Runtime Polymorphism)
+    @Override
+    public int getArea() {
+        return side * side;
+    }
+
+    // Getter
+    public int getSide() {
+        return side;
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println("------ Object Creation ------");
+        First f = new First();
+
+        System.out.println("\n------ Parameterized Object ------");
+        First s1 = new First(4);
+        System.out.println("Side: " + s1.getSide());
+        System.out.println("Area: " + s1.getArea());
+
+        System.out.println("\n------ Runtime Polymorphism (Upcasting) ------");
+        Second parent = new First(5);
+        System.out.println("Area using parent reference: " + parent.getArea());
+
+        System.out.println("\n------ Downcasting ------");
+        if (parent instanceof First) {
+            First child = (First) parent;
+            System.out.println("Area using child reference: " + child.getArea());
+        }
+
+        System.out.println("\n------ instanceof Check ------");
+        if (parent instanceof Second) {
+            System.out.println("parent is an instance of Second");
+        }
+
+        if (parent instanceof First) {
+            System.out.println("parent is an instance of First");
+        }
+    }
+}
+
+class Second {
+
+    protected int length;
+    protected int breadth;
+
+    // Default constructor
+    public Second() {
+        System.out.println("Second class default constructor called");
+    }
+
+    // Parameterized constructor
+    public Second(int length, int breadth) {
+        this.length = length;
+        this.breadth = breadth;
+        System.out.println("Second class parameterized constructor called with values: "
+                + length + ", " + breadth);
+    }
+
+    // Parent method
+    public int getArea() {
+        return length * breadth;
+    }
+}
+``` 
+
 
   
