@@ -93,3 +93,109 @@ public class First  {
 - Throwing exceptions to the caller
 - reating your own exception class.
 - Analyzing the stack trace
+- Checked Exceptions or compile time exceptions, like IOException, MalformedURLException etc.
+- Compiler forces these exceptions to be caught or passed to calling program
+- Unchecked exceptions or runtime exceptions, like ArithmeticException, ArrayIndexOutofBoundsException etc.
+- ompiler does not force to handle these unchecked exceptions.
+
+```
+package Demo;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class First  {
+    public static int readDate() throws NumberFormatException, IOException {
+         int retVal=0;
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            String  urlSting = br.readLine();
+            retVal = Integer.parseInt(urlSting);
+          br.close();
+          return retVal;  
+    }
+    public static void printDiv(int n) throws IOException {
+            for(int i=1; i<25; i++){
+                if(n%i==0){
+                    System.out.format("%s divides %s \n",i,n);
+                }
+            }
+    }
+    public static void main(String[] args) throws IOException {
+        try{
+            int input = readDate();
+            System.out.println("Get the Input "+ input);
+            printDiv(input);
+        } catch(NumberFormatException nfe){
+            System.err.println("Inside nfe");
+        } catch(IOException ioe){
+            System.err.println("Inside ioe");
+        }catch(Exception e){
+            System.err.println("Inside e");
+        } finally {
+            System.err.println("Inside finally");
+        }
+            
+    }
+ 
+}
+```
+###### Throwing exceptions to the caller
+- In case programmer wants to hide exception details and give summary, he can create his own exception class.
+- The user defined exception classes must extend Exception class.
+###### Analyzing the stack trace
+- e.printStackTrace() method gives the information as to from where the exception gets thrown and path leading to it.
+  
+````
+package Demo;
+public class First  {
+    public static void testsuger(int val) throws LowSugerException,HighSugerException{
+        if(val < 70) {
+            throw new LowSugerException("the suger is low");
+        }else if(val >=70 && val<=130){
+            System.out.println("The Suger is fine");
+        }else {
+            throw new HighSugerException("the suger is High");
+        }
+    }
+        public static void main(String[] args) throws HighSugerException {
+            method1();
+               
+        }
+        static void method1(){
+            method2();
+        }
+        static void method2() {
+                int[] sugerData  = new int[]{90,56,35,57,58};
+                for(int i  : sugerData){
+                    try{
+                            testsuger(i);
+                            System.out.println("sugar is fine for " + i);
+                    
+                    }catch(LowSugerException lsex){
+                        System.out.println("sugar is fine for" +lsex.getMessage());
+                    }
+                    catch(HighSugerException hsex){
+                        System.out.println("sugar is fine for" +hsex.getMessage());
+                    }
+                    catch(Exception e){
+                        System.out.println("Exception" );
+                    }
+        }
+    }
+ 
+}
+
+
+class LowSugerException extends Exception {
+    public LowSugerException(String Message){
+        super(Message);
+    }
+}
+
+class HighSugerException extends Exception {
+    public HighSugerException(String Message){
+        super(Message);
+    }
+}
+````
