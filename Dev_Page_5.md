@@ -1,6 +1,7 @@
 ## table of content
 
 - [1. exception](#1-exception)
+- [2. Classification of exceptions](#2-Classification of exceptions)
 
 
 ## 1. exception
@@ -89,7 +90,7 @@ public class First  {
  
 }
 ```
-#### 3. Classification of exceptions
+## 2. Classification of exceptions
 - Throwing exceptions to the caller
 - reating your own exception class.
 - Analyzing the stack trace
