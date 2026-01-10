@@ -1,7 +1,8 @@
 ## table of content
 
-- [1. exception](#1-exception)
-- [2. Classification of exceptions](#2-Classification of exceptions)
+- [1. Exception](#1-exception)
+- [2. Classification of Exceptions](#2-classification-of-exceptions)
+
 
 
 ## 1. exception
