@@ -468,8 +468,94 @@ class HybridVehicle implements hybriEfficiecy, batteryMachine {
  
 ````
 ### 7. What are Abstract Classes?
+
+abstract
+adjective 'abstrakt/
+“existing in thought or as an idea but not having a physical or
+concrete existence”
+-  A class which is declared abstract cannot be instantiated, but only subclassed.
+-   It may of may not contain the abstract methods.
+-    Useful in cases where super class needs to provide a combination of implemented methods, as well as abstract methods.
+
+````
+
+
+
+package Demo;
+import java.sql.Date;
+
+public class First  {
+    public static void main(String[] args)  {
+        Employee e = new RegularEmoloyee("Dan","HR",10000);
+        Employee matt = new ContractEmoloyee("Matt", "IT",10000);
+        System.out.println("Dan's Salary is "+ e.getSalary());
+        System.out.println("matt's Salary is "+ matt.getSalary());
+    }
+        
+}
+
+abstract  class Employee {
+    String name;
+    Date doj;
+    String department;
+    float salary;
+    Employee ( String name,String department ){
+        this.name = name;
+        this.department = department;
+    }
+    public String gatName(){
+        return this.name;
+    }
+    public Date getDoj(){
+        return this.doj;
+    }
+    abstract float getSalary();
+}
+
+ class ContractEmoloyee extends Employee {
+    ContractEmoloyee(String name ,String dep){
+        super(name, dep);
+    }
+    ContractEmoloyee(String name ,String dep,float salary){
+        super(name, dep);
+        this.salary = salary;
+    }
+    float getSalary(){
+        return this.salary * 0.5f ;
+    }
+}
+
+class RegularEmoloyee extends Employee {
+    public RegularEmoloyee(String name ,String dep){
+        super(name, dep);
+    }
+    public RegularEmoloyee(String name ,String dep,float salary){
+        super(name, dep);
+        this.salary = salary;
+    }
+    float getSalary(){
+        return this.salary * 0.8f ;
+    }
+}
+
+````
 ### 8. Creating and Using Abstract Classes
+````
+<Modifier> abstract class <ClassName> extends <Super
+ClassName> implements <InterfaceNames>
+//statement block
+}
+class <ClassName> extends < SuperClassName >{
+//statement block
+}
+````
 ### 9. Differences Between Abstract Classes and Interfaces
+
+- An interface contains only the method signature whereas an abstract class may have some of its methods implemented.
+- All methods in interface are implicitly public, in abstract classes they Can be protected as well.
+- All attributes in interfaces are public, static and final. Abstract class can have attributes with other modifiers.
+- An interface can extend multiple interfaces. An abstract cannot be extended from more than one abstract class.
+- An interface does not have a constructor, but an abstract class can.
 
 
 
