@@ -30,10 +30,10 @@ public class First  {
 }
 ````
 
-###### Types of Nested Classes
+##### Types of Nested Classes
 Nested classes are divided into two main categories: Static Nested Classes and Non-static Nested Classes (also known as Inner Classes).
 
-###### Non-static Nested Classes (Inner Classes):
+##### Non-static Nested Classes (Inner Classes):
 - Member Inner Class: A non-static class created inside a class but outside a method.
 ````
   package Demo;
@@ -59,7 +59,7 @@ class OuterClass{
 
 ````
 
-- Local Inner Class: Classes defined inside a method or a scope block.
+##### Local Inner Class: Classes defined inside a method or a scope block.
   
 ````
   package Demo;
@@ -84,7 +84,7 @@ public class First {
     }
 }
 ````
-- Anonymous Inner Class: A class that has no name; it is used to override methods of a class or interface.
+##### Anonymous Inner Class: A class that has no name; it is used to override methods of a class or interface.
 
  ````
 package Demo;
@@ -123,7 +123,7 @@ abstract class AbsClass {
 }
 ````
 
-- Static Nested Class: A static class created inside another class
+##### Static Nested Class: A static class created inside another class
     
     - Definition: A static class created inside another class.
     - Constraints: It cannot access non-static data members or methods.
