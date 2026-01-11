@@ -2,6 +2,13 @@
 
 - [1. Exception](#1-exception)
 - [2. Classification of Exceptions](#2-classification-of-exceptions)
+- [3. What is an Interface?](#3-what-is-an-interface)
+- [4. Creating and Using an Interface](#4-creating-and-using-an-interface)
+- [5. Extending Interfaces](#5-extending-interfaces)
+- [6. Implementing Multiple Interfaces](#6-implementing-multiple-interfaces)
+- [7. What are Abstract Classes?](#7-what-are-abstract-classes)
+- [8. Creating and Using Abstract Classes](#8-creating-and-using-abstract-classes)
+- [9. Differences Between Abstract Classes and Interfaces](#9-differences-between-abstract-classes-and-interfaces)
 
 
 
@@ -149,55 +156,71 @@ public class First  {
 - e.printStackTrace() method gives the information as to from where the exception gets thrown and path leading to it.
   
 ````
-package Demo;
-public class First  {
-    public static void testsuger(int val) throws LowSugerException,HighSugerException{
-        if(val < 70) {
-            throw new LowSugerException("the suger is low");
-        }else if(val >=70 && val<=130){
-            System.out.println("The Suger is fine");
-        }else {
-            throw new HighSugerException("the suger is High");
+    package Demo;
+    public class First  {
+        public static void testsuger(int val) throws LowSugerException,HighSugerException{
+            if(val < 70) {
+                throw new LowSugerException("the suger is low");
+            }else if(val >=70 && val<=130){
+                System.out.println("The Suger is fine");
+            }else {
+                throw new HighSugerException("the suger is High");
+            }
+        }
+            public static void main(String[] args) throws HighSugerException {
+                method1();
+                   
+            }
+            static void method1(){
+                method2();
+            }
+            static void method2() {
+                    int[] sugerData  = new int[]{90,56,35,57,58};
+                    for(int i  : sugerData){
+                        try{
+                                testsuger(i);
+                                System.out.println("sugar is fine for " + i);
+                        
+                        }catch(LowSugerException lsex){
+                            System.out.println("sugar is fine for" +lsex.getMessage());
+                        }
+                        catch(HighSugerException hsex){
+                            System.out.println("sugar is fine for" +hsex.getMessage());
+                        }
+                        catch(Exception e){
+                            System.out.println("Exception" );
+                        }
+            }
+        }
+     
+    }
+    
+    
+    class LowSugerException extends Exception {
+        public LowSugerException(String Message){
+            super(Message);
         }
     }
-        public static void main(String[] args) throws HighSugerException {
-            method1();
-               
+    
+    class HighSugerException extends Exception {
+        public HighSugerException(String Message){
+            super(Message);
         }
-        static void method1(){
-            method2();
-        }
-        static void method2() {
-                int[] sugerData  = new int[]{90,56,35,57,58};
-                for(int i  : sugerData){
-                    try{
-                            testsuger(i);
-                            System.out.println("sugar is fine for " + i);
-                    
-                    }catch(LowSugerException lsex){
-                        System.out.println("sugar is fine for" +lsex.getMessage());
-                    }
-                    catch(HighSugerException hsex){
-                        System.out.println("sugar is fine for" +hsex.getMessage());
-                    }
-                    catch(Exception e){
-                        System.out.println("Exception" );
-                    }
-        }
+    
     }
- 
-}
+````
+### 3. What is an Interface?
+### 4. Creating and Using an Interface
+### 5. Extending Interfaces
+### 6. Implementing Multiple Interfaces
+### 7. What are Abstract Classes?
+### 8. Creating and Using Abstract Classes
+### 9. Differences Between Abstract Classes and Interfaces
 
 
-class LowSugerException extends Exception {
-    public LowSugerException(String Message){
-        super(Message);
-    }
-}
 
-class HighSugerException extends Exception {
-    public HighSugerException(String Message){
-        super(Message);
-    }
-}
+
+
+
+
 ````
