@@ -210,9 +210,263 @@ public class First  {
     }
 ````
 ### 3. What is an Interface?
+
+- It is a mechanism by which Java somewhat achieves multiple inheritance.
+- It is a system using which unrelated objects interact with each other.
+- An interface is a class where all the fields are public,static & final and all the methods are public & abstract.
+- But it is different from multiple inheritance
+  Code sample
+````
+package Demo;
+public class First  {
+    public static void main(String[] args)  {
+        GasVehicle gasObj = new GasVehicle();
+        gasObj.milesCounter = 100;
+        gasObj.fuelConsumed = 20;
+        System.out.println("Efficiecy  of gas vehical is "+gasObj.getMileage());
+           
+
+        ElectricVehicle eObj = new ElectricVehicle();
+        eObj.milesCounter = 100;
+        eObj.powerConsumed = 15;
+        System.out.println("Efficiecy  of ElectricVehicle is "+eObj.getMileage());
+
+               
+    }
+        
+}
+
+// interface
+
+ interface fuelEfficiecy {
+    int  testInferface = 10; //public static final integer
+    float getMileage(); //abstract method
+}
+ 
+class GasVehicle implements fuelEfficiecy {
+    float milesCounter;
+    float fuelConsumed;
+
+    public float getMileage(){
+        return milesCounter/fuelConsumed;
+    }
+
+}
+
+class ElectricVehicle implements fuelEfficiecy {
+    float milesCounter;
+    float powerConsumed;
+
+    public float getMileage(){
+        return milesCounter/powerConsumed;
+    }
+
+}
+
+````
+  
 ### 4. Creating and Using an Interface
+````
+<Modifier> interface <InterfaceName> extends <InterfaceNames>
+//statement block
+}
+class <ClassName> implements < InterfaceName >{
+//statement block
+}
+````
 ### 5. Extending Interfaces
+
+- An interface, unlike other classes can extend multiple interfaces.
+- A class implementing an extended interface has to implement the methods of both the interface, as well as its ancestors.
+````
+package Demo;
+public class First  {
+    public static void main(String[] args)  {
+        GasVehicle gasObj = new GasVehicle();
+        gasObj.milesCounter = 100;
+        gasObj.fuelConsumed = 20;
+        System.out.println("Efficiecy  of gas vehical is "+gasObj.getMileage());
+           
+
+        ElectricVehicle eObj = new ElectricVehicle();
+        eObj.milesCounter = 100;
+        eObj.powerConsumed = 15;
+        System.out.println("Efficiecy  of ElectricVehicle is "+eObj.getMileage());
+
+        HybridVehicle hObj = new HybridVehicle();
+        hObj.milesCounter = 100;
+        hObj.powerConsumed = 10;
+        hObj.fuelConsumed = 10;
+        System.out.println("Efficiecy  of HybridVehicle is "+hObj.getMileage());
+       
+    }
+        
+}
+
+// extend interface
+
+interface fuelEfficiecy {
+    int  testInferface = 10; //public static final integer
+    float getMileage(); //abstract method
+}
+
+interface hybriEfficiecy extends fuelEfficiecy  {
+    float getFuelEfficiecy ();
+    float getChargeEfficiecy ();
+}
+
+class HybridVehicle implements hybriEfficiecy {
+    float milesCounter;
+    float fuelConsumed;
+    float powerConsumed;
+    public float getFuelEfficiecy (){
+        return milesCounter/fuelConsumed;
+    }
+    public float getChargeEfficiecy () {
+        return milesCounter/powerConsumed;
+    }
+    public float getMileage(){
+        return ((0.5f * getFuelEfficiecy() )+(0.5f *getChargeEfficiecy()));
+    }
+
+}
+ 
+class GasVehicle implements fuelEfficiecy {
+    float milesCounter;
+    float fuelConsumed;
+
+    public float getMileage(){
+        return milesCounter/fuelConsumed;
+    }
+
+}
+
+class ElectricVehicle implements fuelEfficiecy {
+    float milesCounter;
+    float powerConsumed;
+
+    public float getMileage(){
+        return milesCounter/powerConsumed;
+    }
+
+}
+
+````
 ### 6. Implementing Multiple Interfaces
+
+- A class can choose to implement multiple interfaces.
+-  It then has to implement all the methods defined in all the chosen interfaces.
+- Helpful in spreading concept of multiple inheritance, where a class chooses to pick multiple behavioral patterns.
+
+````
+// multiple interface
+
+package Demo;
+public class First  {
+    public static void main(String[] args)  {
+        GasVehicle gasObj = new GasVehicle();
+        gasObj.milesCounter = 100;
+        gasObj.fuelConsumed = 20;
+        System.out.println("Efficiecy  of gas vehical is "+gasObj.getMileage());
+           
+
+        ElectricVehicle eObj = new ElectricVehicle();
+        eObj.milesCounter = 100;
+        eObj.powerConsumed = 15;
+        eObj.chageBattey();
+        System.out.println("Efficiecy  of ElectricVehicle is "+eObj.getMileage());
+
+        HybridVehicle hObj = new HybridVehicle();
+        hObj.milesCounter = 100;
+        hObj.powerConsumed = 10;
+        hObj.fuelConsumed = 10;
+        hObj.chageBattey();
+        System.out.println("Efficiecy  of HybridVehicle is "+hObj.getMileage());
+
+        batteryMachine bmobj = new a ();
+        bmobj.chageBattey();
+        bmobj = new b ();
+        bmobj.chageBattey();
+       
+    }
+        
+}
+
+// extend interface
+
+interface fuelEfficiecy {
+    int  testInferface = 10; //public static final integer
+    float getMileage(); //abstract method
+}
+
+interface hybriEfficiecy extends fuelEfficiecy  {
+    float getFuelEfficiecy ();
+    float getChargeEfficiecy ();
+}
+
+interface batteryMachine {
+    void chageBattey();
+
+}
+
+class a implements batteryMachine {
+    public void chageBattey() {
+        System.out.println("Change A's battery"); 
+    }
+}
+
+class b implements batteryMachine {
+    public void chageBattey() {
+        System.out.println("Change B's battery"); 
+    }
+}
+    
+class GasVehicle implements fuelEfficiecy {
+    float milesCounter;
+    float fuelConsumed;
+
+    public float getMileage(){
+        return milesCounter/fuelConsumed;
+    }
+
+}
+
+class ElectricVehicle implements fuelEfficiecy , batteryMachine {
+    float milesCounter;
+    float powerConsumed;
+
+    public void chageBattey() {
+        System.out.println("Change ElectricVehicle's battery"); 
+    }
+
+    public float getMileage(){
+        return milesCounter/powerConsumed;
+    }
+
+}
+
+class HybridVehicle implements hybriEfficiecy, batteryMachine {
+    float milesCounter;
+    float fuelConsumed;
+    float powerConsumed;
+
+    public  void chageBattey(){
+        System.out.println("Change hybrid's battery");
+    }
+
+    public float getFuelEfficiecy (){
+        return milesCounter/fuelConsumed;
+    }
+    public float getChargeEfficiecy () {
+        return milesCounter/powerConsumed;
+    }
+    public float getMileage(){
+        return ((0.5f * getFuelEfficiecy() )+(0.5f *getChargeEfficiecy()));
+    }
+
+}
+ 
+````
 ### 7. What are Abstract Classes?
 ### 8. Creating and Using Abstract Classes
 ### 9. Differences Between Abstract Classes and Interfaces
