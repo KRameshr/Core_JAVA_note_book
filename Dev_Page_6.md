@@ -5,7 +5,7 @@
  A class defined within a class or interface is known as a nested class.
 
 ````
-Example Syntax:
+Syntax:
 Java
 class Java_Outer_class {
     // code 
@@ -14,6 +14,7 @@ class Java_Outer_class {
     }
 }
 
+Example
 
 package Demo;
 public class First  {
