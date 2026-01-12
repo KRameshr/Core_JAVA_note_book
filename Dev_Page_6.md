@@ -321,11 +321,11 @@ class ThreadImplementRunnableClass implements Runnable {
  - Thread priorities
 
  Any number from 1 to 10
-Ø Uses the Thread class’ static method “setPriority(int val)”
-Ø Three static final variables hold these values:-
-Ø Thread.MIN_PRIORITY (1)
-Ø Thread.NORM_PRIORITY (5)
-Ø Thread.MAX_PRIORITY (10)
+- Uses the Thread class’ static method “setPriority(int val)"
+- Three static final variables hold these values:-
+- Thread.MIN_PRIORITY (1)
+- Thread.NORM_PRIORITY (5)
+-  Thread.MAX_PRIORITY (10)
 
 
 ````
