@@ -161,3 +161,223 @@ class staticOuter {
 ````
 
 #### 2. Thread
+
+ - Defining Thread
+
+````
+Extend class java.lang.Thread & Override run method
+E.g.:-
+class ThreadDemo extends Thread {
+public void run() {
+//your code
+}
+}
+Ø Implement java.lang.Runnable interface
+E.g. class ThreadDemo implements Runnable {
+ public void run() {
+   //your code
+ }
+}
+
+
+Example 
+package Demo;
+
+public class Progarmmin {
+    public static void main(String[] args) {
+        ThreadExtendClass t1 = new ThreadExtendClass();
+        t1.setName("FisrtThread");
+        t1.start();
+
+        ThreadExtendClass t2 = new ThreadExtendClass();
+        t2.setName("SecondThread");
+        t2.start();
+
+        ThreadExtendClass t3 = new ThreadExtendClass();
+        t3.setName("ThirdThread");
+        t3.start();
+
+        ThreadImplementRunnableClass obj = new ThreadImplementRunnableClass();
+        Thread t4 =new  Thread(obj);
+        t4.start();
+       
+    }
+    
+}
+
+class ThreadExtendClass extends Thread {
+    public void run() {
+        for(int i =0; i<5; i++){
+         System.out.println("Thread Extend example and Thread is: "+i+ " "+Thread.currentThread().getName() );
+        }
+    }
+}
+
+class ThreadImplementRunnableClass implements Runnable {
+    public void run() {
+        System.out.println("Thread Implement example");
+    }
+}
+````
+ - Creating & Starting a Thread
+
+````
+When the class extends java.lang.Thread class
+E.g.:- ThreadDemo t = new ThreadDemo();
+t.start();
+Ø When the class implements java.lang.Runnable interface
+E.g. ThreadDemo obj = new ThreadDemo();
+Thread t = new Thread(obj);
+t.start();
+
+````
+ - Thread States
+
+One of the following five states:-
+##### New:- This is the state the thread is in after the Thread instance
+has been created, but the start() method has not been invoked on
+the thread.
+##### Runnable:- This is the state a thread is in when it's eligible to
+run, but the scheduler has not selected it to be the running
+thread. A thread first enters the runnable state when the start()
+method is invoked.
+##### Running:- When the scheduler chooses the thread to be running
+as the current process.
+Waiting/Blocked/Sleeping:- This is the state where the thread
+is still alive but not eligible to run.
+##### Dead:- This is the state when the run method of the Thread has
+completed its execution and it no longer remains a separate
+thread of execution.
+ - Preventing Thread Execution
+       
+       Three scenario would be discussed :-
+       - Thread is sleeping.
+       -  Thread is waiting.
+       -   hread is blocked for acquiring an object’s lock.
+ - Thread Sleeping
+
+Sleep
+Ø Makes the running thread go into the sleep state for some
+specified time
+Ø Yield
+Ø Makes the current running thread give up the processor
+temporarily, but keeps the thread in runnable state.
+Ø Join
+Ø Makes the current thread wait for the end of execution of the
+thread it is joined to.
+
+exmple 
+````
+package Demo;
+
+public class Progarmmin {
+    public static void main(String[] args) {
+        ThreadExtendClass t1 = new ThreadExtendClass();
+        t1.setName("FisrtThread");
+        t1.start();
+
+        ThreadExtendClass t2 = new ThreadExtendClass();
+        t2.setName("SecondThread");
+        t2.start();
+
+        ThreadExtendClass t3 = new ThreadExtendClass();
+        t3.setName("ThirdThread");
+        t3.start();
+
+       
+    }
+    
+}
+
+class ThreadExtendClass extends Thread {
+    public void run() {
+        
+        //type  sleep 
+
+        try {
+            for(int i =0; i<5; i++){
+                System.out.println("Thread Extend example and Thread is: "+i+ " "+Thread.currentThread().getName() );
+                Thread.currentThread().sleep(3000);
+            }
+
+        }catch(InterruptedException ie){
+            System.out.println(ie);
+        }
+       
+    }
+}
+
+class ThreadImplementRunnableClass implements Runnable {
+    public void run() {
+        System.out.println("Thread Implement example");
+    }
+}
+````
+
+
+
+ - Thread priorities
+
+ Any number from 1 to 10
+Ø Uses the Thread class’ static method “setPriority(int val)”
+Ø Three static final variables hold these values:-
+Ø Thread.MIN_PRIORITY (1)
+Ø Thread.NORM_PRIORITY (5)
+Ø Thread.MAX_PRIORITY (10)
+
+
+````
+
+package Demo;
+
+public class Progarmmin {
+    public static void main(String[] args) {
+        ThreadExtendClass t1 = new ThreadExtendClass();
+        t1.setName("FisrtThread");
+        t1.setPriority(5);
+        t1.start();
+
+        ThreadExtendClass t2 = new ThreadExtendClass();
+        t2.setName("SecondThread");
+        t2.setPriority(10);
+        t2.start();
+        try {
+            t1.start();
+            t1.join();
+            t2.start();
+        } catch(InterruptedException ie){
+            System.out.println(ie);
+         }
+       
+    }
+    
+}
+
+class ThreadExtendClass extends Thread {
+    public void run() {
+        
+
+        try {
+            for(int i =0; i<3; i++){
+                System.out.println("Thread Extend example and Thread is: "+i+ " "+Thread.currentThread().getName() );
+                if(i == 1 && "SecondThread".equals(Thread.currentThread().getName()))
+                Thread.currentThread().yield();
+            }
+
+        }catch(Exception ie){
+            System.out.println(ie);
+        }
+       
+    }
+}
+
+class ThreadImplementRunnableClass implements Runnable {
+    public void run() {
+        System.out.println("Thread Implement example");
+    }
+}
+
+````
+
+ - Synchronization
+ - Thread Interaction
