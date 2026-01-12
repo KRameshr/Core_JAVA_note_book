@@ -382,4 +382,148 @@ class ThreadImplementRunnableClass implements Runnable {
 ````
 
  - Synchronization
+
+   
+````
+package Demo;
+
+public class Programming implements Runnable {
+    private Account jointAccount = new Account();
+
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            withdrawAmt(5);
+        }
+    }
+
+    // Synchronize to prevent race conditions
+    public synchronized void withdrawAmt(int amt) {
+        if (amt > jointAccount.getBal()) {
+            System.out.println("Amount greater than available balance: " + Thread.currentThread().getName());
+        } else {
+            System.out.println("Balance is available: " + Thread.currentThread().getName());
+            jointAccount.withdrawAmt(amt);
+        }
+    }
+
+    public static void main(String[] args) {
+        Programming jointAccountServices = new Programming();
+
+        Thread tom = new Thread(jointAccountServices);
+        tom.setName("Tom");
+
+        Thread harry = new Thread(jointAccountServices);
+        harry.setName("Harry");
+
+        harry.start();
+        tom.start();
+
+      
+        try {
+            tom.join();
+            harry.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        
+        System.out.println("Final available balance: " + jointAccountServices.jointAccount.getBal());
+    }
+}
+
+class Account {
+    private int bal = 100;
+
+    public int getBal() {
+        return this.bal;
+    }
+    public void withdrawAmt(int amt) {
+        bal = bal - amt;
+    }
+}
+
+````
+   
  - Thread Interaction
+
+  ````
+
+package Demo;
+import java.util.LinkedList;
+
+public class Programming {
+    public static void main(String[] args) {
+        LinkedList<Integer> sharedResource = new LinkedList<>();
+
+        Producer p = new Producer(sharedResource);
+        Consumer c = new Consumer(sharedResource,"c");
+        Consumer c2 = new Consumer(sharedResource,"c1");
+
+        p.start();
+        c.start();
+        c2.start();
+    }
+}
+
+class Producer extends Thread {
+    LinkedList<Integer> sharedResource;
+
+    Producer(LinkedList<Integer> shLinkedList) {
+        super("Producer");
+        this.sharedResource = shLinkedList; 
+    }
+
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            synchronized (sharedResource) {
+                while (!sharedResource.isEmpty()) {
+                    try {
+                        System.out.println("Producer waiting, list not empty ");
+                        sharedResource.wait();
+                    } catch (InterruptedException ioe) {
+                        ioe.printStackTrace();
+                    }
+                }
+                System.out.println("Producer adding: " + i+ " and " +(i+i));
+                sharedResource.add(i);
+                sharedResource.add(i+1);
+                sharedResource.notifyAll();
+            }
+        }
+    }
+}
+
+class Consumer extends Thread {
+    LinkedList<Integer> sharedResource;
+
+    Consumer(LinkedList<Integer> shLinkedList,String name) {
+        super("Consumer "+ name);
+        this.sharedResource = shLinkedList; 
+    }
+
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            synchronized (sharedResource) {
+                while (sharedResource.isEmpty()) {
+                    try {
+                        System.out.println("Consumer waiting, list empty ");
+                        sharedResource.wait();
+                    } catch (InterruptedException ioe) {
+                        ioe.printStackTrace();
+                    }
+                }
+
+                sharedResource.remove();
+                System.out.println("Consumer consumed: " + i +" & "+ Thread.currentThread().getName());
+
+                try {
+                    Thread.currentThread().sleep(200);
+                }catch(InterruptedException ie){
+                    System.out.println(ie);
+                }
+                sharedResource.notify();
+            }
+        }
+    }
+}
+````
