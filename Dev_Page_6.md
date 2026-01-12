@@ -168,11 +168,11 @@ class staticOuter {
 Extend class java.lang.Thread & Override run method
 E.g.:-
 class ThreadDemo extends Thread {
-public void run() {
-//your code
+   public void run() {
+   //your code
+   }
 }
-}
-Ø Implement java.lang.Runnable interface
+ Implement java.lang.Runnable interface
 E.g. class ThreadDemo implements Runnable {
  public void run() {
    //your code
@@ -257,14 +257,16 @@ thread of execution.
  - Thread Sleeping
 
 Sleep
-Ø Makes the running thread go into the sleep state for some
-specified time
-Ø Yield
-Ø Makes the current running thread give up the processor
-temporarily, but keeps the thread in runnable state.
-Ø Join
-Ø Makes the current thread wait for the end of execution of the
-thread it is joined to.
+
+   Makes the running thread go into the sleep state for some specified time
+   
+Yield
+
+   Makes the current running thread give up the processor temporarily, but keeps the thread in runnable state.
+   
+Join
+
+   Makes the current thread wait for the end of execution of the thread it is joined to.
 
 exmple 
 ````
