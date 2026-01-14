@@ -142,11 +142,12 @@ class StackDemo {
 
 
 ````
-- Queues
 
+- Queues
 - Queue interface typically, but not necessarily keeps the elements in the FIFO order.
 - Some of the methods of this interface are add(Object), remove(), poll(), peek() etc.
 - A typical implementation of the Queue is a LinkedList and PriorityQueue(this maintains the elements in natural order).
+
 ````
 package Demo;
 
