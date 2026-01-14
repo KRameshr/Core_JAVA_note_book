@@ -65,7 +65,7 @@ class StackDemo {
     - The keys in the Map are unique, but the values could be duplicate.
     - Some of the methods are put(Object,Object), get(Object),remove(Object), keySet(), entrySet() etc.
     - Entry is a inner class of map and is accessed via Map.Entry and has methods, getKey() and getValue().
-      ###### Map Interface(Continued…)
+###### Map Interface(Continued…)
     - HashMap implementation can have one null key and it maintains no order of the elements stored.
     - HashTable also an implementation of Map, does not allow null key values and is synchronised.
     - LinkedHashMap also acts like a HashMap, but it maintains the natural insertion order of elements.
