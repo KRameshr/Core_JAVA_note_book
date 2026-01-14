@@ -6,12 +6,14 @@ Benefits of using this framework are that users don’t have to worry about the 
 
 
 - Key interfaces of Collections Framework
+  
 ````
    Lists : Store list of objects.
    Sets: Store unique objects.
    Maps : Store objects with unique keys.
    Queues: Store objects in an order, in which they should be processed.
 ````
+
 ###### Comparable & Comparator
 
   - java.lang.Comparable is an interface that objects need to implement in case they want to get sorted by Collections class’ sort method.
@@ -20,7 +22,8 @@ Benefits of using this framework are that users don’t have to worry about the 
   - java.util.Comparator is required, when custom criteria is used for sorting, e.g. sort employee object with name or id or salary or DOJ etc.
 
     
-- Lists
+
+######  Lists
 
 ````
 package Demo;
@@ -56,7 +59,8 @@ class StackDemo {
 }
 
 ````
--  Map
+
+###### Map
     - Map contains the objects as key-value pair.
     - The keys in the Map are unique, but the values could be duplicate.
     - Some of the methods are put(Object,Object), get(Object),remove(Object), keySet(), entrySet() etc.
@@ -66,7 +70,7 @@ class StackDemo {
     - HashTable also an implementation of Map, does not allow null key values and is synchronised.
     - LinkedHashMap also acts like a HashMap, but it maintains the natural insertion order of elements.
     - TreeMap cannot have null key and it maintains the elements in ascending order.
-    ````           
+````           
          package Demo;
          
          import java.util.HashMap;
@@ -104,7 +108,8 @@ class StackDemo {
          }
 
 ````      
--   Sets
+
+######  Sets
       - Set is a collection of unique objects and it does not allow duplicates.
       - HashSet implementation uses hashtable for storing these objects.
       - LinkedHashSet implementation uses linked list for storing these objects. Insertion/Delete thus, are fast here.
@@ -143,7 +148,7 @@ class StackDemo {
 
 ````
 
-- Queues
+###### Queues
 - Queue interface typically, but not necessarily keeps the elements in the FIFO order.
 - Some of the methods of this interface are add(Object), remove(), poll(), peek() etc.
 - A typical implementation of the Queue is a LinkedList and PriorityQueue(this maintains the elements in natural order).
