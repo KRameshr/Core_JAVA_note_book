@@ -105,4 +105,75 @@ class StackDemo {
 
 ````      
 -   Sets
+      - Set is a collection of unique objects and it does not allow duplicates.
+      - HashSet implementation uses hashtable for storing these objects.
+      - LinkedHashSet implementation uses linked list for storing these objects. Insertion/Delete thus, are fast here.
+      - TreeSet implementation uses a tree for storing these objects in sorted order. Hence searching is fastest here.
+````
+      package Demo;
+      
+      import java.util.HashSet;
+      import java.util.Iterator;
+      import java.util.LinkedHashSet;
+      import java.util.Set;
+      
+      public class First {
+          public static void main(String[] args) {
+      
+               //Set<String> hashSet = new HashSet<>();
+              Set<String> hashSet = new LinkedHashSet(); // unique order
+              hashSet.add("obj1");
+              hashSet.add("obj3");
+              hashSet.add("obj2");
+      
+              System.out.println("Before removal: " + hashSet);
+      
+              hashSet.remove("obj3");
+      
+              System.out.println("After removal: " + hashSet);
+      
+              Iterator<String> it = hashSet.iterator();
+      
+              while (it.hasNext()) {
+                  System.out.println("Inside while loop and vlaue in set is "+it.next());
+              }
+          }
+      }
+
+
+````
 - Queues
+
+- Queue interface typically, but not necessarily keeps the elements in the FIFO order.
+- Some of the methods of this interface are add(Object), remove(), poll(), peek() etc.
+- A typical implementation of the Queue is a LinkedList and PriorityQueue(this maintains the elements in natural order).
+````
+package Demo;
+
+import java.util.LinkedList;
+import java.util.PriorityQueue;
+import java.util.Queue;
+
+public class First {
+    public static void main(String[] args) {
+        // Queue q = new LinkedList<>();
+        Queue q = new PriorityQueue();
+        System.out.println("1.the values in " + q );
+        q.add(1);
+        q.add(3);
+        q.add(2);
+        q.add(4);
+        q.add(5);
+        System.out.println("1.the values in " + q.peek() );
+        System.out.println("2.the values in " + q );
+
+        System.out.println("3.the values in " + q.poll() );
+        System.out.println("4.the values in " + q );
+
+        System.out.println("5.the values in " + q.remove() );
+        System.out.println("6.the values in " + q );
+        
+
+    }
+}
+````
