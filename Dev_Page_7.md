@@ -56,6 +56,47 @@ class StackDemo {
 }
 
 ````
--  Maps
+-  Map
+    - Map contains the objects as key-value pair.
+    - The keys in the Map are unique, but the values could be duplicate.
+    - Some of the methods are put(Object,Object), get(Object),remove(Object), keySet(), entrySet() etc.
+    - Entry is a inner class of map and is accessed via Map.Entry and has methods, getKey() and getValue().
+    ````           
+         package Demo;
+         
+         import java.util.HashMap;
+         import java.util.Iterator;
+         import java.util.LinkedHashMap;
+         import java.util.Map;
+         import java.util.TreeMap;
+         
+         import org.xml.sax.HandlerBase;
+         
+         public class First {
+             public static void main(String[] args) {
+                 //Map m = new HashMap<>();
+                 //Map m = new LinkedHashMap();
+         
+                 Map m = new TreeMap();
+         
+                 System.out.println("1. Map is "+m);
+                 m.put(1,"alpha");
+                 m.put(2,"Beta");
+                 m.put(3,"gamma");
+                 System.out.println(" Map after is "+m);
+                 m.remove(2);
+                 System.out.println(" Map after is "+m);
+                 m.put(2, "beta");
+                 m.put(5, "Eeta");
+         
+         
+                 Iterator it = m.keySet().iterator();
+                 while (it.hasNext()) {
+                     System.out.println("The values inside Map is  " + it.next() + " "+ m.get(it.next()));
+                 }
+         
+             }
+         }
+       ````
 -   Sets
 - Queues
