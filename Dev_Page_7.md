@@ -435,3 +435,265 @@ class C extends B {
 
 ````
 
+###### Input/Output Streams
+  
+- Stream is an abstraction and can be thought of as flow of data from source to sink.
+- Source or InputStream initiates the flow of data.
+- Sink or OutputStream terminates the flow of data.
+- There is no concept of index like array in stream. It is just the flow of  data.
+- Two types of Streams: Byte & Character Based
+
+````
+package Demo;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.io.Serializable;
+
+public class First {
+
+    static void callStramDemo(){
+        try {
+            int size = 0;
+            int i;
+            byte[] arr = new byte[256];
+            InputStream in = new FileInputStream( "C:\\Users\\ramesh\\Downloads\\update Resume\\Module-14-Java-IO1.pdf");
+            OutputStream out = new FileOutputStream("C:\\Users\\ramesh\\Downloads\\update Resume\\copy.pdf");
+
+            while ((i = in.read(arr)) != -1) {
+                size++;
+                out.write(arr,0,i);
+            }
+            in.close();
+            out.close();
+
+            System.out.println("File copied successfully!");
+            System.out.println("The file size is: " + size + " bytes");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    static void charDemo(){
+        try{
+            int i = 0;
+            char[] charArr = new char[256];
+            FileReader fin = new FileReader("C:\\Users\\ramesh\\Downloads\\update Resume\\Module-14-Java-IO1.pdf");
+            PrintWriter pw = new PrintWriter(System.out);
+
+            while ( (i=fin.read(charArr))!= -1 ) {
+                pw.write(charArr,0,i); 
+            }
+            fin.close();pw.close();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+    public static void main(String[] args) {
+       try {
+        String str ="";
+        BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\ramesh\\Downloads\\update Resume\\Module-14-Java-IO1.pdf"));
+        BufferedWriter wr = new BufferedWriter(new FileWriter("C:\\Users\\ramesh\\Downloads\\update Resume\\Module-14-Java-IO1.pdf"));
+
+        while( (str=br.readLine()) != null ) {
+            wr.write(str);
+            wr.newLine();
+        }
+        br.close();
+        wr.close();
+       }catch (Exception e) {
+            e.printStackTrace();
+        }
+
+      
+
+    }
+}
+
+
+class  Customer implements Serializable {
+    String name;
+    Integer id ;
+    Customer (String name ,Integer id){
+        this.name = name;
+        this.id = id ;
+
+    }
+    public String toString(){
+        return "Name of Customer::"+ this.name+"and id is "+this.id;
+    }
+}
+````
+
+###### Byte Oriented Streams
+
+- InputStream class is used for reading the data in terms of bytes.
+- Some of the methods are  read(), read(byte[]), read(byte[],int,int),  close() etc.
+-  OutputStream class is used for representing the output stream of  data.
+-  Some of the methods are write(int), write(byte[]), write(byte[], int,int), close() etc.
+-   Demo
+
+###### Character Oriented Streams
+- Reader and Writer classes & their sub-classes are used for dealing with the characters.
+- read() and print() methods are used by these to read and write respectively.
+- BufferedReader and BufferedWriter classes provide the built-in buffer for reading and writing the data.
+-  readLine() and write() are some methods used for reading and writing data by these classes.
+-  Demo
+  
+###### bject Serialization
+
+  - Serialization of objects is needed in case one wants to persist the objects in the permanent storage.
+  - For reading & writing an object in a file, it should implement the Serializable interface.
+  -  ObjectInputStream & ObjectOutputStream are used to read & write the objects to a file.
+  -  They make use of witeObject & readObject methods, along with readXXX & writeXXX methods for the primitives.
+````
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.io.Serializable;
+
+public class First {
+
+    static void callStramDemo(){
+        try {
+            int size = 0;
+            int i;
+            byte[] arr = new byte[256];
+            InputStream in = new FileInputStream( "C:\\Users\\ramesh\\Downloads\\update Resume\\Module-14-Java-IO1.pdf");
+            OutputStream out = new FileOutputStream("C:\\Users\\ramesh\\Downloads\\update Resume\\copy.pdf");
+
+            while ((i = in.read(arr)) != -1) {
+                size++;
+                out.write(arr,0,i);
+            }
+            in.close();
+            out.close();
+
+            System.out.println("File copied successfully!");
+            System.out.println("The file size is: " + size + " bytes");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    static void charDemo(){
+        try{
+            int i = 0;
+            char[] charArr = new char[256];
+            FileReader fin = new FileReader("C:\\Users\\ramesh\\Downloads\\update Resume\\Module-14-Java-IO1.pdf");
+            PrintWriter pw = new PrintWriter(System.out);
+
+            while ( (i=fin.read(charArr))!= -1 ) {
+                pw.write(charArr,0,i); 
+            }
+            fin.close();pw.close();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+    public static void main(String[] args) {
+
+        try {
+            // Writing object
+            ObjectOutputStream out = new ObjectOutputStream(
+                new FileOutputStream("C:\\Users\\ramesh\\Downloads\\update Resume\\customer.ser")
+            );
+
+            Customer c1 = new Customer("c1", 1);
+            out.writeObject(c1);
+            out.close();
+
+            // Reading object
+            ObjectInputStream in = new ObjectInputStream(
+                new FileInputStream("C:\\Users\\ramesh\\Downloads\\update Resume\\customer.ser")
+            );
+
+            Customer c2 = (Customer) in.readObject();
+            in.close();
+
+            System.out.println(c2.toString());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+}
+
+
+class  Customer implements Serializable {
+    String name;
+    Integer id ;
+    Customer (String name ,Integer id){
+        this.name = name;
+        this.id = id ;
+
+    }
+    public String toString(){
+        return "Name of Customer::"+ this.name+"and id is "+this.id;
+    }
+}
+````
+###### annel Based I/O
+
+- Java Channels are similar to the Streams, with few differences:-
+- We can both read and write to a channel.
+- These are always read from/written to a buffer.
+- these can be read and written asynchronously.
+- Buffers are block of memory closely coupled with the underlying operating system. These too like arrays are of fixed capacity.
+- Data can be read/written into a buffer and these are used when interacting with channels.
+- Demo
+  
+````
+package Demo;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
+
+public class First {
+    public static void main(String[] args) {
+
+        try {
+            FileInputStream fin = new FileInputStream("C:\\Users\\ramesh\\Downloads\\update Resume\\customer.ser");
+            FileOutputStream fout = new FileOutputStream("C:\\Users\\ramesh\\Downloads\\update Resume\\customer.ser");
+
+            FileChannel in =  fin.getChannel();
+            FileChannel out = fin.getChannel();
+            int bufferSize = 2048;
+            ByteBuffer buff = ByteBuffer.allocate(bufferSize);
+
+            long start = System.nanoTime();
+            while ( in.read(buff)> 0) {
+                buff.flip();
+                out.write(buff);
+                buff.clear();  
+            }
+            System.out.println("time"+ ((System.nanoTime()-start)/1000000));
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }    
+
+
+}
+````
+
+
