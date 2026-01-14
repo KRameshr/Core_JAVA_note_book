@@ -183,3 +183,255 @@ public class First {
     }
 }
 ````
+
+- Java Generic Features
+- Generic List in Java
+- Generic Map in Java
+- Java Generic Classes & Methods
+- Java Generic For Loop
+- Generic WildCard
+
+
+###### Java Generics
+
+Java Generics was introduced in Java 5 to deal with type-safe objects. Using generics a programmer can force to store a specific type of objects in collection.
+
+
+````
+E.g. List<Integer> list = new ArrayList<>(); 
+
+
+````
+Advantages are :-
+ - Type Safety:- Only one specific type of Objects are allowed to be stored in collection.
+ - Type Casting not required.
+ - Compile time verification.
+
+
+###### Generic List in Java
+
+- A list can be generified.
+  
+````
+E.g.
+List <Integer> l = new ArrayList<>(); 
+List<String> l2= new ArrayList<>(); 
+Demo to see a generic List and how to iterate over it.
+
+
+package Demo;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class First {
+    public static void main(String[] args) {
+      List<Integer> inList = new ArrayList<>();
+      inList.add(1);
+      inList.add(2);
+      inList.add(3);
+      System.out.println("intList is"+ inList);
+     
+      Iterator<Integer> it = inList.iterator();
+      while (it.hasNext()) {
+        System.out.println("The value is "+it.next());
+      }
+
+    }
+}
+````
+
+###### Generic Map in Java
+
+- Following is a way to create a generic map.
+
+````
+Map <Integer, String > myMap = new HashMap<>();
+````
+Generic Iterators could be created for keys and values.
+````
+E.g. Iterator<Integer> keyIt= myMap.keySet().iterator();
+
+````
+
+Java Generic Classes & Methods 
+
+Even the classes & methods we define can be generified.
+Demo for creating and using generic classes & methods.
+
+###### Generic WildCard
+
+Unknown wildcard a.k.a. unbounded e.g. List<?> elements.
+Extends wildcard a.k.a. Upper Bounded e.g. List <? extends superClass>
+Super wildcard a.k.a. Lower Bounded e.g. List <? super superClass> Intel ipaat Software Solutions Pvt. Ltd.
+
+###### Set Interface
+
+Set is a collection of unique objects and it does not allow duplicates.
+HashSet implementation uses hashtable for storing these objects.
+LinkedHashSet implementation uses linked list for storing these objects. Insertion/Delete thus, are fast here.
+TreeSet implementation uses a tree for storing these objects in sorted order. Hence searching is fastest here.
+
+###### Map Interface
+
+Map contains the objects as key-value pair.
+The keys in the Map are unique, but the values could be duplicate.
+Some of the methods are put(Object,Object), get(Object), remove(Object), keySet(), entrySet() etc.
+Entry is a inner class of map and is accessed via Map.Entry and has methods, getKey() and getValue().
+
+###### Map Interface(Continued…)
+
+HashMap implementation can have one null key and it maintains no order of the elements stored.
+HashTable also an implementation of Map, does not allow null key values and is synchronised.
+LinkedHashMap also acts like a HashMap, but it maintains the natural insertion order of elements.
+TreeMap cannot have null key and it maintains the elements in ascending order.
+
+
+###### Queue Interface
+
+Queue interface typical y, but not necessarily keeps the elements in the FIFO order.
+Some of the methods of this interface are add(Object), remove(), poll(), peek() etc.
+A typical implementation of the Queue is a LinkedList and PriorityQueue(this maintains the elements in natural order).
+
+example
+
+````
+
+package Demo;
+
+import java.util.*;
+import java.util.ArrayList;
+
+public class First {
+    public static void main(String[] args) {
+      List<? super A > i = new ArrayList<>();
+      i.add(new A());
+      i.add(new B());
+      i.add(new C());
+
+
+
+        // mapDemo();
+        // classDemo();
+        listDemo();
+    }
+
+
+
+    // wildcard demo
+    static void wildcardDemo(List<?> l) {
+        for (Object o : l) {
+            System.out.println("The item is: " + o);
+        }
+    }
+
+    static double wildcardDemo2(List<? extends Number> l) {
+      double sum = 0;
+      for (Number o : l) {
+          sum = sum + o.doubleValue();
+      }
+      return sum;
+    }
+
+
+    // generic method
+    static <T> boolean isPresent(T e1, Collection<T> c) {
+        for (T i : c) {
+            if (e1.equals(i)) return true;
+        }
+        return false;
+    }
+
+    static void listDemo() {
+        List<Integer> intList = new ArrayList<>();
+        List<String> strList = new ArrayList<>();
+
+        intList.add(1);
+        intList.add(2);
+        intList.add(3);
+
+        strList.add("alpha");
+        strList.add("beta");
+        strList.add("gamma");
+
+        System.out.println("String List: " + strList);
+
+        wildcardDemo(intList);
+        wildcardDemo(strList);
+        System.out.println("Sum of inList "+wildcardDemo2(intList));
+
+        List<Double> dList = new ArrayList<>();
+        dList.add(25.25);
+        dList.add(55.25);
+        dList.add(35.25);
+        System.out.println("Sum of inList "+dList);
+        System.out.println("Sum of inList "+wildcardDemo2(dList));
+
+    }
+
+    static void mapDemo() {
+        Map<Integer, String> m = new HashMap<>();
+        m.put(1, "Alpha");
+        m.put(2, "Beta");
+        m.put(3, "Gamma");
+
+        System.out.println("Map: " + m);
+        System.out.println(m.get(2).concat(" hello world"));
+
+        Iterator<Integer> keyIt = m.keySet().iterator();
+        while (keyIt.hasNext()) {
+            System.out.println("The value is: " + m.get(keyIt.next()));
+        }
+    }
+
+    static void classDemo() {
+        MyQueue<String> strQ = new MyQueue<>();
+        strQ.enqueue("alpha");
+        strQ.enqueue("beta");
+        strQ.enqueue("gamma");
+
+        System.out.println("String Queue: " + strQ.i);
+        String str = strQ.dequeue();
+        System.out.println(str + " dequeued → " + strQ.i);
+
+        MyQueue<Integer> intQ = new MyQueue<>();
+        intQ.enqueue(1);
+        intQ.enqueue(2);
+        intQ.enqueue(3);
+
+        System.out.println("Integer Queue: " + intQ.i);
+        Integer int1 = intQ.dequeue();
+        System.out.println(int1 + " dequeued → " + intQ.i);
+
+        System.out.println("Is alpha present? " + isPresent("alpha", strQ.i));
+        System.out.println("Is beta present? " + isPresent("beta", strQ.i));
+
+        System.out.println("Is 3 present? " + isPresent(3, intQ.i));
+        System.out.println("Is 10 present? " + isPresent(10, intQ.i));
+        
+    }
+}
+
+class MyQueue<T> {
+    LinkedList<T> i = new LinkedList<>();
+
+    public void enqueue(T obj) {
+        i.addLast(obj);
+    }
+
+    public T dequeue() {
+        return i.removeFirst();
+    }
+}
+
+class A {
+}
+
+class B extends A {
+}
+class C extends B {
+}
+
+````
+
