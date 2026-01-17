@@ -39,14 +39,8 @@ TodoListProject
 1. Open terminal in the project folder
 2. Compile the files:
 javac Task.java TodoApp.java
-
-markdown
-Copy code
 3. Run the program:
 java TodoApp
-
-yaml
-Copy code
 
 ---
 
