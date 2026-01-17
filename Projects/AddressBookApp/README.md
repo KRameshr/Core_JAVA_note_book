@@ -39,13 +39,9 @@ AddressBookApp
 1. Open terminal inside the project folder
 2. Compile the files:
 javac Contact.java AddressBook.java
-
-markdown
-Copy code
 3. Run the program:
 java AddressBook
 
-yaml
 ---
 
 ## ▶ How to Run
