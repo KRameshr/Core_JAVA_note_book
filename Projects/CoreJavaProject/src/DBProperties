@@ -1,0 +1,4 @@
+DBDriver=com.microsoft.sqlserver.jdbc.SQLServerDriver
+DBName=jdbc:sqlserver://DESKTOP-00GCR5V\\KRAMESH;databaseName=LibraryDB;encrypt=true;trustServerCertificate=true
+User=sa
+Password=Ramesh@2002
