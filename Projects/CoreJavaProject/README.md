@@ -57,13 +57,14 @@ CREATE TABLE member_book_record (
 ```
 Update DBProperties file with your SQL Server credentials:
 
-properties
+## properties
 Copy code
-DBDriver=com.microsoft.sqlserver.jdbc.SQLServerDriver
-DBName=jdbc:sqlserver://<YOUR_SERVER_NAME>:1433;databaseName=LibraryDB;encrypt=true;trustServerCertificate=true
-User=<YOUR_USERNAME>
-Password=<YOUR_PASSWORD>
-How to Run
+- DBDriver=com.microsoft.sqlserver.jdbc.SQLServerDriver
+- BName=jdbc:sqlserver://<YOUR_SERVER_NAME>:1433;databaseName=LibraryDB;encrypt=true;trustServerCertificate=true
+- User=<YOUR_USERNAME>
+- Password=<YOUR_PASSWORD>
+
+## How to Run
 Clone the repository
 
 Add Microsoft JDBC Driver (mssql-jdbc-13.2.1.jre11.jar) to lib/ folder
@@ -73,6 +74,7 @@ Compile all .java files
 Run UserMenu.java to access the interactive console
 
 Usage
+```
 sql
 Copy code
 1 - Add Book
@@ -80,5 +82,6 @@ Copy code
 3 - Issue Book
 4 - Return Book
 5 - Exit
+```
 Author
 K Ramesh
