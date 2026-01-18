@@ -53,6 +53,8 @@ CREATE TABLE member_book_record (
     doi DATE DEFAULT GETDATE(),
     dor DATE
 );
+
+```
 Update DBProperties file with your SQL Server credentials:
 
 properties
