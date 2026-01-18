@@ -83,5 +83,4 @@ Copy code
 4 - Return Book
 5 - Exit
 ```
-Author
-K Ramesh
+
